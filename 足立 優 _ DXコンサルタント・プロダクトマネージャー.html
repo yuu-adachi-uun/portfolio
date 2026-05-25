@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>足立 優 | DXコンサルタント・プロダクトマネージャー</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;800&family=DM+Mono:wght@300;400&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0f0e0d;
+    --paper: #f5f2ed;
+    --accent: #c8402a;
+    --muted: #8a8070;
+    --light: #e8e4dc;
+    --white: #fdfcfa;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 300;
+    line-height: 1.8;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.2rem 3rem;
+    background: rgba(245,242,237,0.88);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--light);
+  }
+  .nav-logo {
+    font-family: 'Shippori Mincho', serif;
+    font-weight: 800; font-size: 1.1rem;
+    letter-spacing: 0.05em; color: var(--ink);
+    text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--muted);
+    text-decoration: none; transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 80px;
+  }
+  .hero-left {
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 6rem 3rem 6rem 5rem;
+  }
+  .hero-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--accent);
+    margin-bottom: 1.5rem;
+  }
+  .hero-name {
+    font-family: 'Shippori Mincho', serif;
+    font-weight: 800;
+    font-size: clamp(3.5rem, 6vw, 5.5rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+  }
+  .hero-name-en {
+    font-family: 'DM Mono', monospace;
+    font-weight: 300; font-size: 1rem;
+    letter-spacing: 0.25em; color: var(--muted);
+    margin-bottom: 2.5rem;
+  }
+  .hero-desc {
+    font-size: 1.05rem; line-height: 1.9;
+    color: #3a3530; max-width: 420px;
+    margin-bottom: 3rem;
+  }
+  .hero-cta {
+    display: inline-flex; align-items: center; gap: 0.8rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.8rem; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--white);
+    background: var(--ink);
+    padding: 1rem 2rem;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .hero-cta:hover { background: var(--accent); transform: translateX(4px); }
+
+  .hero-right {
+    position: relative;
+    background: var(--ink);
+    overflow: hidden;
+    display: flex; align-items: flex-end;
+  }
+  .hero-stats {
+    padding: 4rem 3rem;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;
+    width: 100%;
+  }
+  .stat-item {}
+  .stat-num {
+    font-family: 'Shippori Mincho', serif;
+    font-weight: 800; font-size: 2.8rem;
+    color: var(--white); line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+  .stat-num span {
+    font-size: 1.4rem; color: var(--accent);
+  }
+  .stat-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--muted);
+  }
+  .hero-bg-text {
+    position: absolute; top: 2rem; right: -1rem;
+    font-family: 'Shippori Mincho', serif;
+    font-size: 8rem; font-weight: 800;
+    color: rgba(255,255,255,0.03);
+    writing-mode: vertical-rl;
+    letter-spacing: 0.1em;
+    pointer-events: none; user-select: none;
+  }
+
+  /* ── SECTION BASE ── */
+  section { padding: 7rem 5rem; }
+  .section-header {
+    display: flex; align-items: baseline; gap: 1.5rem;
+    margin-bottom: 4rem;
+  }
+  .section-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem; letter-spacing: 0.2em;
+    color: var(--accent); text-transform: uppercase;
+  }
+  .section-title {
+    font-family: 'Shippori Mincho', serif;
+    font-weight: 800; font-size: 2.2rem;
+    letter-spacing: -0.01em;
+  }
+  .section-line {
+    flex: 1; height: 1px; background: var(--light);
+    margin-left: 1rem;
+  }
+
+  /* ── ABOUT ── */
+  #about { background: var(--white); }
+  .about-grid {
+    display: grid; grid-template-columns: 2fr 1fr; gap: 5rem;
+    align-items: start;
+  }
+  .about-text p {
+    font-size: 1.05rem; line-height: 2;
+    color: #3a3530; margin-bottom: 1.5rem;
+  }
+  .about-text strong { color: var(--ink); font-weight: 500; }
+  .skills-list { display: flex; flex-direction: column; gap: 1rem; }
+  .skill-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem; letter-spacing: 0.1em;
+    padding: 0.6rem 1rem;
+    border: 1px solid var(--light);
+    color: var(--muted);
+    background: var(--paper);
+  }
+
+  /* ── EXPERIENCE ── */
+  #experience { background: var(--paper); }
+  .exp-list { display: flex; flex-direction: column; gap: 0; }
+  .exp-item {
+    display: grid; grid-template-columns: 200px 1fr;
+    gap: 3rem; padding: 3rem 0;
+    border-bottom: 1px solid var(--light);
+    transition: background 0.2s;
+  }
+  .exp-item:first-child { border-top: 1px solid var(--light); }
+  .exp-period {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem; letter-spacing: 0.1em;
+    color: var(--muted); padding-top: 0.3rem;
+  }
+  .exp-current {
+    display: inline-block;
+    background: var(--accent); color: var(--white);
+    font-size: 0.6rem; letter-spacing: 0.15em;
+    padding: 0.2rem 0.5rem; margin-top: 0.5rem;
+    text-transform: uppercase;
+  }
+  .exp-company {
+    font-family: 'Shippori Mincho', serif;
+    font-weight: 600; font-size: 1.3rem;
+    margin-bottom: 0.3rem;
+  }
+  .exp-role {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem; letter-spacing: 0.1em;
+    color: var(--accent); text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+  .exp-desc {
+    font-size: 0.95rem; line-height: 1.9;
+    color: #4a4540;
+  }
+  .exp-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+  .exp-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem; letter-spacing: 0.1em;
+    padding: 0.3rem 0.7rem;
+    border: 1px solid var(--light);
+    color: var(--muted);
+  }
+
+  /* ── MEDIA ── */
+  #media { background: var(--ink); }
+  #media .section-title { color: var(--white); }
+  #media .section-num { color: var(--accent); }
+  #media .section-line { background: rgba(255,255,255,0.1); }
+  .media-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .media-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 2rem;
+    text-decoration: none;
+    display: block;
+    transition: background 0.2s, border-color 0.2s, transform 0.2s;
+  }
+  .media-card:hover {
+    background: rgba(255,255,255,0.07);
+    border-color: var(--accent);
+    transform: translateY(-4px);
+  }
+  .media-source {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--accent);
+    margin-bottom: 1rem;
+  }
+  .media-title {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 1rem; line-height: 1.6;
+    color: var(--white); margin-bottom: 0.8rem;
+  }
+  .media-arrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem; color: var(--muted);
+    letter-spacing: 0.1em;
+  }
+
+  /* ── CONTACT ── */
+  #contact { background: var(--white); text-align: center; }
+  .contact-inner { max-width: 600px; margin: 0 auto; }
+  .contact-title {
+    font-family: 'Shippori Mincho', serif;
+    font-weight: 800; font-size: 2.8rem;
+    line-height: 1.2; margin-bottom: 1.5rem;
+  }
+  .contact-sub {
+    font-size: 1rem; color: var(--muted);
+    margin-bottom: 3rem; line-height: 1.9;
+  }
+  .contact-email {
+    display: inline-flex; align-items: center; gap: 0.8rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.85rem; letter-spacing: 0.1em;
+    color: var(--white); background: var(--ink);
+    padding: 1.2rem 2.5rem;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .contact-email:hover { background: var(--accent); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--ink); color: var(--muted);
+    padding: 2.5rem 5rem;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  footer p {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem; letter-spacing: 0.1em;
+  }
+
+  /* ── ANIMATIONS ── */
+  .fade-in {
+    opacity: 0; transform: translateY(20px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { gap: 1.5rem; }
+    #hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-left { padding: 5rem 1.5rem 3rem; }
+    .hero-right { min-height: 300px; }
+    .hero-stats { grid-template-columns: repeat(4, 1fr); gap: 1.5rem; padding: 2.5rem 1.5rem; }
+    section { padding: 5rem 1.5rem; }
+    .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
+    .media-grid { grid-template-columns: 1fr; }
+    footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">足立 優</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#media">Media</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left">
+    <p class="hero-tag">Freelance DX Consultant &amp; Product Manager</p>
+    <h1 class="hero-name">足立 優</h1>
+    <p class="hero-name-en">YUU ADACHI</p>
+    <p class="hero-desc">
+      「徹底した顧客視点 × デジタル実装 × 組織変革」で企業の事業価値を最大化する、実効型DXコンサルタント。飲食・小売業界での現場経験を原体験に、戦略策定からプロダクト開発・組織変革まで一気通貫で実行します。
+    </p>
+    <a href="#contact" class="hero-cta">お問い合わせ →</a>
+  </div>
+  <div class="hero-right">
+    <div class="hero-bg-text">DX</div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">20<span>億円</span></div>
+        <div class="stat-label">Cost Reduction</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">1500<span>万</span></div>
+        <div class="stat-label">App Downloads</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">180<span>店舗</span></div>
+        <div class="stat-label">Deployment Scale</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">12<span>年</span></div>
+        <div class="stat-label">DX Experience</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-header fade-in">
+    <span class="section-num">01 — About</span>
+    <h2 class="section-title">私について</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="about-grid fade-in">
+    <div class="about-text">
+      <p>
+        飲食・小売業界での<strong>現場マネジメント経験</strong>を原体験に、テクノロジーで事業を変革するキャリアを歩んできました。ジャンカラ（株式会社TOAI）では部長代理として、業界初の「受付レス予約システム」や自社専用デバイスのスクラッチ開発を主導。年間約<strong>20億円のコスト削減</strong>と過去最高益達成に貢献しました。
+      </p>
+      <p>
+        スギ薬局では<strong>1,500万DL規模のアプリ</strong>のサービスオーナーとして、PwCコンサルティング・グッドパッチといった専門ファームをマネジメントしながら、アジャイル組織への変革と生成AIのプロダクト開発プロセスへの実装を完遂。
+      </p>
+      <p>
+        2026年3月に独立し、現在はスギ薬局のDXコンサルタント兼サービスオーナーとして、スマホレジやヘルスケアデータ活用等の最上流工程を牽引しています。<strong>戦略策定からシステム実装、組織変革までを一気通貫で実行できる</strong>「実効型コンサルタント」です。
+      </p>
+    </div>
+    <div>
+      <div class="skills-list">
+        <div class="skill-tag">DX戦略・プロダクトマネジメント</div>
+        <div class="skill-tag">大規模パートナーマネジメント</div>
+        <div class="skill-tag">OMO・店舗DXの実装</div>
+        <div class="skill-tag">生成AIの組織実装</div>
+        <div class="skill-tag">アジャイル組織変革</div>
+        <div class="skill-tag">Figma / Miro / JIRA / Confluence</div>
+        <div class="skill-tag">ChatGPT / Gemini / AIエージェント</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-header fade-in">
+    <span class="section-num">02 — Experience</span>
+    <h2 class="section-title">職務経歴</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="exp-list">
+
+    <div class="exp-item fade-in">
+      <div class="exp-period">
+        2026.03 — Present
+        <div class="exp-current">現職</div>
+      </div>
+      <div>
+        <div class="exp-company">フリーランス（独立コンサルタント）</div>
+        <div class="exp-role">DXコンサルタント / サービスオーナー</div>
+        <div class="exp-desc">
+          株式会社スギ薬局とのコンサルティング契約のもと、スギ薬局アプリ・販促管理システムのサービスオーナーとして事業戦略に紐づくプロダクトロードマップを策定。商品検索・スマホレジ・マイカルテ（美容と健康データ活用）などの新機能企画・実装を支援。プロダクト開発プロセスへの生成AI利活用支援も担当。
+        </div>
+        <div class="exp-tags">
+          <span class="exp-tag">DXコンサルティング</span>
+          <span class="exp-tag">プロダクトロードマップ</span>
+          <span class="exp-tag">生成AI活用</span>
+          <span class="exp-tag">スマホレジ</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item fade-in">
+      <div class="exp-period">2024.09 — 2026.02</div>
+      <div>
+        <div class="exp-company">株式会社スギ薬局</div>
+        <div class="exp-role">サービスオーナー / PdM / AI活用推進リード</div>
+        <div class="exp-desc">
+          DX戦略本部にてPwCコンサルティング（PMO）・グッドパッチ（UXデザイン）をアサインし、事業会社側責任者として高度なパートナーマネジメントを実行。1,500万DL規模のアプリの新機能開発を主導。AIエージェントによる企画壁打ち・AI仮想ペルソナによるプロトタイプ検証スキームを構築し全社標準ナレッジとして展開。完全内製チームをサービス型チームへ移行させウォーターフォールからアジャイルへの組織変革を実現。
+        </div>
+        <div class="exp-tags">
+          <span class="exp-tag">1,500万DLアプリ</span>
+          <span class="exp-tag">アジャイル変革</span>
+          <span class="exp-tag">PwC / グッドパッチ</span>
+          <span class="exp-tag">AI仮想ペルソナ</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item fade-in">
+      <div class="exp-period">2012.06 — 2024.08</div>
+      <div>
+        <div class="exp-company">株式会社TOAI（ジャンカラ）</div>
+        <div class="exp-role">新規事業戦略部 部長代理 / PdM / グループ会社代表取締役</div>
+        <div class="exp-desc">
+          店長・エリアマネージャーを経てデジタル戦略部へ異動。業界初の「受付レス予約システム（すぐカラ）」をスクラッチ開発し予約比率を5%→55%へ向上。全180店舗へのセルフ受付精算機・注文タブレット導入により年間約20億円の人件費削減を実現。JOYSOUND（エクシング）とのAPI連携による業界初のアプリ楽曲予約機能も実現。グループ会社代表として6つの新規事業（飲食・フィットネス等）のP/L管理も担当。
+        </div>
+        <div class="exp-tags">
+          <span class="exp-tag">スクラッチ開発</span>
+          <span class="exp-tag">年間20億円削減</span>
+          <span class="exp-tag">180店舗展開</span>
+          <span class="exp-tag">API連携</span>
+          <span class="exp-tag">新規事業</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- MEDIA -->
+<section id="media">
+  <div class="section-header fade-in">
+    <span class="section-num">03 — Media</span>
+    <h2 class="section-title">メディア掲載</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="media-grid fade-in">
+
+    <a href="https://dx.sugi-recruit.jp/project-story/article/service-team" target="_blank" class="media-card">
+      <div class="media-source">スギ薬局公式ブログ</div>
+      <div class="media-title">分業体制からの脱却。サービス型チームへの変革ストーリー</div>
+      <div class="media-arrow">Read →</div>
+    </a>
+
+    <a href="https://sakumaga.sakura.ad.jp/entry/toai/" target="_blank" class="media-card">
+      <div class="media-source">さくマガ（さくらインターネット）</div>
+      <div class="media-title">ジャンカラアプリが目指す新しい顧客体験と受付無人化の裏側</div>
+      <div class="media-arrow">Read →</div>
+    </a>
+
+    <div class="media-card" style="cursor:default; opacity:0.6;">
+      <div class="media-source">グッドパッチ 公式インタビュー</div>
+      <div class="media-title">スギ薬局におけるUXデザインパートナーとの共創</div>
+      <div class="media-arrow">公開予定</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner fade-in">
+    <h2 class="contact-title">お仕事の<br>ご相談はこちら</h2>
+    <p class="contact-sub">
+      DX戦略の立案、プロダクトマネジメント、生成AIの組織実装など、<br>お気軽にご相談ください。
+    </p>
+    <a href="mailto:yuu.adachi.uun@gmail.com" class="contact-email">
+      メールで問い合わせる →
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 足立 優 — DX Consultant &amp; Product Manager</p>
+  <p>Nagoya, Japan</p>
+</footer>
+
+<script>
+  // Fade-in on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

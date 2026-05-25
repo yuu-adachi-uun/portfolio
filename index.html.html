@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0046)file:///C:/Users/yuuad/Downloads/index_14.html -->
+<!-- saved from url=(0046)file:///C:/Users/yuuad/Downloads/index_17.html -->
 <html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -59,14 +59,14 @@
   .nav-social svg { width: 16px; height: 16px; fill: currentColor; }
   #hero {
     min-height: 100vh;
-    display: grid;
-    grid-template-columns: 55% 45%;
+    display: flex;
+    align-items: center;
     padding-top: 70px;
   }
   .hero-left {
     display: flex; flex-direction: column; justify-content: center;
-    padding: 6rem 4rem 6rem 6rem;
-    position: relative;
+    padding: 6rem 8rem;
+    max-width: 800px;
   }
   .hero-left::after {
     content: '';
@@ -75,13 +75,13 @@
   }
   .hero-photo { margin-bottom: 1.5rem; }
   .hero-photo img {
-    width: 80px; height: 80px;
+    width: 120px; height: 120px;
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid var(--border);
   }
   .hero-photo-placeholder {
-    width: 80px; height: 80px; border-radius: 50%;
+    width: 120px; height: 120px; border-radius: 50%;
     background: var(--warm-white); border: 2px solid var(--border);
     display: flex; flex-direction: column; align-items: center; justify-content: center;
     overflow: hidden;
@@ -262,6 +262,52 @@
   .contact-social a { display: inline-flex; align-items: center; gap: 0.5rem; font-family: 'Josefin Sans', sans-serif; font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
   .contact-social a:hover { color: var(--sage-dark); }
   .contact-social svg { width: 14px; height: 14px; fill: currentColor; }
+  /* ── HOBBY ── */
+  #hobby { background: var(--cream); overflow: hidden; }
+  .slider-wrapper { position: relative; }
+  .slider-track {
+    display: flex; gap: 1.5rem;
+    overflow-x: auto; scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 0.5rem;
+  }
+  .slider-track::-webkit-scrollbar { display: none; }
+  .slider-item {
+    flex: 0 0 calc(40% - 0.75rem);
+    scroll-snap-align: start;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  .slider-item img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+    display: block;
+  }
+  .slider-item:hover img { transform: scale(1.04); }
+  .slider-controls {
+    display: flex; gap: 0.8rem; margin-top: 1.5rem;
+    align-items: center;
+  }
+  .slider-btn {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.7rem; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--sage-dark);
+    background: none; border: 1px solid var(--sage-light);
+    padding: 0.6rem 1.2rem; cursor: pointer;
+    transition: all 0.2s;
+  }
+  .slider-btn:hover { background: var(--sage-dark); color: var(--warm-white); border-color: var(--sage-dark); }
+  .hobby-caption {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.65rem; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--muted);
+    margin-top: 1.5rem;
+  }
+
   /* ── WORKS ── */
   #works { background: var(--cream); }
   .works-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
@@ -440,6 +486,7 @@
 
     /* WORKS */
     .works-grid { grid-template-columns: 1fr; gap: 1rem; }
+    .slider-item { flex: 0 0 85%; }
 
     /* BLOG */
     .blog-item { grid-template-columns: 1fr auto; gap: 1rem; }
@@ -474,15 +521,16 @@
 <body>
 
 <nav>
-  <a href="file:///C:/Users/yuuad/Downloads/index_14.html#hero" class="nav-logo">足立 優</a>
+  <a href="file:///C:/Users/yuuad/Downloads/index_17.html#hero" class="nav-logo">足立 優</a>
   <div class="nav-right">
     <ul class="nav-links">
-      <li><a href="file:///C:/Users/yuuad/Downloads/index_14.html#about">About</a></li>
-      <li><a href="file:///C:/Users/yuuad/Downloads/index_14.html#experience">Experience</a></li>
-      <li><a href="file:///C:/Users/yuuad/Downloads/index_14.html#works">Works</a></li>
-      <li><a href="file:///C:/Users/yuuad/Downloads/index_14.html#blog">Blog</a></li>
-      <li><a href="file:///C:/Users/yuuad/Downloads/index_14.html#media">Media</a></li>
-      <li><a href="file:///C:/Users/yuuad/Downloads/index_14.html#contact">Contact</a></li>
+      <li><a href="file:///C:/Users/yuuad/Downloads/index_17.html#about">About</a></li>
+      <li><a href="file:///C:/Users/yuuad/Downloads/index_17.html#experience">Experience</a></li>
+      <li><a href="file:///C:/Users/yuuad/Downloads/index_17.html#hobby">Hobby</a></li>
+      <li><a href="file:///C:/Users/yuuad/Downloads/index_17.html#works">Works</a></li>
+      <li><a href="file:///C:/Users/yuuad/Downloads/index_17.html#blog">Blog</a></li>
+      <li><a href="file:///C:/Users/yuuad/Downloads/index_17.html#media">Media</a></li>
+      <li><a href="file:///C:/Users/yuuad/Downloads/index_17.html#contact">Contact</a></li>
     </ul>
     <div class="nav-social">
       <a href="https://www.linkedin.com/in/%E5%84%AA-%E8%B6%B3%E7%AB%8B-1187ba326/" target="_blank" aria-label="LinkedIn">
@@ -501,12 +549,13 @@
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
   <button class="mobile-menu-close" onclick="toggleMenu()">✕ Close</button>
-  <a href="file:///C:/Users/yuuad/Downloads/index_14.html#about" onclick="toggleMenu()">About</a>
-  <a href="file:///C:/Users/yuuad/Downloads/index_14.html#experience" onclick="toggleMenu()">Experience</a>
-  <a href="file:///C:/Users/yuuad/Downloads/index_14.html#works" onclick="toggleMenu()">Works</a>
-  <a href="file:///C:/Users/yuuad/Downloads/index_14.html#blog" onclick="toggleMenu()">Blog</a>
-  <a href="file:///C:/Users/yuuad/Downloads/index_14.html#media" onclick="toggleMenu()">Media</a>
-  <a href="file:///C:/Users/yuuad/Downloads/index_14.html#contact" onclick="toggleMenu()">Contact</a>
+  <a href="file:///C:/Users/yuuad/Downloads/index_17.html#about" onclick="toggleMenu()">About</a>
+  <a href="file:///C:/Users/yuuad/Downloads/index_17.html#experience" onclick="toggleMenu()">Experience</a>
+  <a href="file:///C:/Users/yuuad/Downloads/index_17.html#hobby" onclick="toggleMenu()">Hobby</a>
+  <a href="file:///C:/Users/yuuad/Downloads/index_17.html#works" onclick="toggleMenu()">Works</a>
+  <a href="file:///C:/Users/yuuad/Downloads/index_17.html#blog" onclick="toggleMenu()">Blog</a>
+  <a href="file:///C:/Users/yuuad/Downloads/index_17.html#media" onclick="toggleMenu()">Media</a>
+  <a href="file:///C:/Users/yuuad/Downloads/index_17.html#contact" onclick="toggleMenu()">Contact</a>
   <div class="mobile-social">
     <a href="https://www.linkedin.com/in/%E5%84%AA-%E8%B6%B3%E7%AB%8B-1187ba326/" target="_blank">
       <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
@@ -526,43 +575,6 @@
     <h1 class="hero-name">足立 優</h1>
     <p class="hero-name-en">Yuu Adachi</p>
     <p class="hero-desc">「徹底した顧客視点 × デジタル実装 × 組織変革」で企業の事業価値を最大化する、実効型DXコンサルタント。戦略策定からプロダクト開発・組織変革まで一気通貫で実行します。</p>
-    <div class="hero-actions">
-      <a href="file:///C:/Users/yuuad/Downloads/index_14.html#contact" class="btn-primary">お問い合わせ →</a>
-      <a href="file:///C:/Users/yuuad/Downloads/index_14.html#experience" class="btn-secondary">経歴を見る</a>
-    </div>
-  </div>
-  <div class="hero-right">
-    <div class="stat-grid">
-      <div class="stat-item">
-        <div class="stat-num">20<span class="stat-unit">億円</span></div>
-        <div class="stat-label">Cost Reduction</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">1500<span class="stat-unit">万</span></div>
-        <div class="stat-label">App Downloads</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">180<span class="stat-unit">店舗</span></div>
-        <div class="stat-label">Deployment Scale</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">12<span class="stat-unit">年</span></div>
-        <div class="stat-label">DX Experience</div>
-      </div>
-    </div>
-    <div class="hero-social-block">
-      <div class="social-label">Connect</div>
-      <div class="social-links">
-        <a href="https://www.linkedin.com/in/%E5%84%AA-%E8%B6%B3%E7%AB%8B-1187ba326/" target="_blank" class="social-link">
-          <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
-          LinkedIn
-        </a>
-        <a href="https://x.com/yuuadachiuun" target="_blank" class="social-link">
-          <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
-          X / Twitter
-        </a>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -646,10 +658,48 @@
   </div>
 </section>
 
+<!-- HOBBY -->
+<section id="hobby">
+  <div class="section-header fade-in">
+    <span class="section-eyebrow">04 — Hobby</span>
+    <h2 class="section-title">趣味</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="fade-in">
+    <div class="slider-wrapper">
+      <div class="slider-track" id="sliderTrack">
+        <div class="slider-item">
+          <img src="file:///C:/Users/yuuad/Downloads/hobby1.jpeg" alt="料理">
+        </div>
+        <div class="slider-item">
+          <img src="file:///C:/Users/yuuad/Downloads/hobby4.jpeg" alt="料理">
+        </div>
+        <div class="slider-item">
+          <img src="file:///C:/Users/yuuad/Downloads/hobby2.jpeg" alt="パン作り">
+        </div>
+        <div class="slider-item">
+          <img src="file:///C:/Users/yuuad/Downloads/hobby3.jpeg" alt="パン作り">
+        </div>
+        <div class="slider-item">
+          <img src="file:///C:/Users/yuuad/Downloads/hobby5.jpeg" alt="パン作り">
+        </div>
+        <div class="slider-item">
+          <img src="file:///C:/Users/yuuad/Downloads/hobby6.jpeg" alt="パン作り">
+        </div>
+      </div>
+    </div>
+    <div class="slider-controls">
+      <button class="slider-btn" onclick="slideLeft()">← Prev</button>
+      <button class="slider-btn" onclick="slideRight()">Next →</button>
+    </div>
+    <p class="hobby-caption">料理・パン作り — 休日の楽しみ</p>
+  </div>
+</section>
+
 <!-- WORKS -->
 <section id="works">
   <div class="section-header fade-in">
-    <span class="section-eyebrow">04 — Works</span>
+    <span class="section-eyebrow">05 — Works</span>
     <h2 class="section-title">制作物</h2>
     <div class="section-line"></div>
   </div>
@@ -676,28 +726,28 @@
 <!-- BLOG -->
 <section id="blog">
   <div class="section-header fade-in">
-    <span class="section-eyebrow">05 — Blog</span>
+    <span class="section-eyebrow">06 — Blog</span>
     <h2 class="section-title">ブログ・発信</h2>
     <div class="section-line"></div>
   </div>
   <div class="fade-in">
     <div class="blog-list">
-      <a href="file:///C:/Users/yuuad/Downloads/index_14.html#blog-post-1" class="blog-item" onclick="togglePost(event, &#39;blog-post-1&#39;)">
+      <a href="file:///C:/Users/yuuad/Downloads/index_17.html#blog-post-1" class="blog-item" onclick="togglePost(event, &#39;blog-post-1&#39;)">
         <div class="blog-date">2026.04</div>
         <div class="blog-title">引越し相見積もりで学んだ「DXが価格を動かす」という話</div>
         <div class="blog-arrow">Read →</div>
       </a>
-      <a href="file:///C:/Users/yuuad/Downloads/index_14.html#blog-post-2" class="blog-item" onclick="togglePost(event, &#39;blog-post-2&#39;)">
+      <a href="file:///C:/Users/yuuad/Downloads/index_17.html#blog-post-2" class="blog-item" onclick="togglePost(event, &#39;blog-post-2&#39;)">
         <div class="blog-date">2026.05</div>
         <div class="blog-title">人気ヘアサロンの体験をUXリサーチとして読み解く</div>
         <div class="blog-arrow">Read →</div>
       </a>
-      <a href="file:///C:/Users/yuuad/Downloads/index_14.html#blog-post-3" class="blog-item" onclick="togglePost(event, &#39;blog-post-3&#39;)">
+      <a href="file:///C:/Users/yuuad/Downloads/index_17.html#blog-post-3" class="blog-item" onclick="togglePost(event, &#39;blog-post-3&#39;)">
         <div class="blog-date">2026.05</div>
         <div class="blog-title">高級コスメブランドの店舗体験をUXリサーチとして読み解く</div>
         <div class="blog-arrow">Read →</div>
       </a>
-      <a href="file:///C:/Users/yuuad/Downloads/index_14.html#blog-post-4" class="blog-item" onclick="togglePost(event, &#39;blog-post-4&#39;)">
+      <a href="file:///C:/Users/yuuad/Downloads/index_17.html#blog-post-4" class="blog-item" onclick="togglePost(event, &#39;blog-post-4&#39;)">
         <div class="blog-date">2026.01</div>
         <div class="blog-title">eスポーツ世界大会をUXリサーチとして読み解く</div>
         <div class="blog-arrow">Read →</div>
@@ -822,7 +872,7 @@
 
 <section id="media">
   <div class="section-header fade-in">
-    <span class="section-eyebrow">06 — Media</span>
+    <span class="section-eyebrow">07 — Media</span>
     <h2 class="section-title">メディア掲載</h2>
     <div class="section-line"></div>
   </div>
@@ -874,6 +924,18 @@
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.1 });
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  function slideLeft() {
+    const track = document.getElementById('sliderTrack');
+    const itemWidth = track.querySelector('.slider-item').offsetWidth + 24;
+    track.scrollBy({ left: -itemWidth, behavior: 'smooth' });
+  }
+
+  function slideRight() {
+    const track = document.getElementById('sliderTrack');
+    const itemWidth = track.querySelector('.slider-item').offsetWidth + 24;
+    track.scrollBy({ left: itemWidth, behavior: 'smooth' });
+  }
 
   function toggleMenu() {
     const menu = document.getElementById('mobileMenu');

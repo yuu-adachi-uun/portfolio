@@ -665,34 +665,40 @@
     <h2 class="section-title">趣味</h2>
     <div class="section-line"></div>
   </div>
-  <div class="fade-in">
+
+  <div class="fade-in" style="margin-bottom: 3rem;">
+    <p style="font-family:'Josefin Sans',sans-serif; font-size:0.68rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--sage); margin-bottom:1.2rem;">料理・パン作り</p>
     <div class="slider-wrapper">
-      <div class="slider-track" id="sliderTrack">
-        <div class="slider-item">
-          <img src="hobby1.jpeg" alt="料理">
-        </div>
-        <div class="slider-item">
-          <img src="hobby4.jpeg" alt="料理">
-        </div>
-        <div class="slider-item">
-          <img src="hobby2.jpeg" alt="パン作り">
-        </div>
-        <div class="slider-item">
-          <img src="hobby3.jpeg" alt="パン作り">
-        </div>
-        <div class="slider-item">
-          <img src="hobby5.jpeg" alt="パン作り">
-        </div>
-        <div class="slider-item">
-          <img src="hobby6.jpeg" alt="パン作り">
-        </div>
+      <div class="slider-track" id="sliderTrack1">
+        <div class="slider-item"><img src="hobby1.jpeg" alt="料理"></div>
+        <div class="slider-item"><img src="hobby4.jpeg" alt="料理"></div>
+        <div class="slider-item"><img src="hobby2.jpeg" alt="パン作り"></div>
+        <div class="slider-item"><img src="hobby3.jpeg" alt="パン作り"></div>
+        <div class="slider-item"><img src="hobby5.jpeg" alt="パン作り"></div>
+        <div class="slider-item"><img src="hobby6.jpeg" alt="パン作り"></div>
       </div>
     </div>
     <div class="slider-controls">
-      <button class="slider-btn" onclick="slideLeft()">← Prev</button>
-      <button class="slider-btn" onclick="slideRight()">Next →</button>
+      <button class="slider-btn" onclick="slide('sliderTrack1', -1)">← Prev</button>
+      <button class="slider-btn" onclick="slide('sliderTrack1', 1)">Next →</button>
     </div>
-    <p class="hobby-caption">料理・パン作り — 休日の楽しみ</p>
+    <p class="hobby-caption">自宅での料理とパン作り — 休日の楽しみ</p>
+  </div>
+
+  <div class="fade-in">
+    <p style="font-family:'Josefin Sans',sans-serif; font-size:0.68rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--sage); margin-bottom:1.2rem;">食の探求</p>
+    <div class="slider-wrapper">
+      <div class="slider-track" id="sliderTrack2">
+        <div class="slider-item"><img src="eat1.jpeg" alt="外食"></div>
+        <div class="slider-item"><img src="eat2.jpeg" alt="外食"></div>
+        <div class="slider-item"><img src="eat3.jpeg" alt="外食"></div>
+      </div>
+    </div>
+    <div class="slider-controls">
+      <button class="slider-btn" onclick="slide('sliderTrack2', -1)">← Prev</button>
+      <button class="slider-btn" onclick="slide('sliderTrack2', 1)">Next →</button>
+    </div>
+    <p class="hobby-caption">国内外のレストラン・食文化の探求</p>
   </div>
 </section>
 
@@ -924,6 +930,12 @@
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.1 });
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  function slide(trackId, dir) {
+    const track = document.getElementById(trackId);
+    const itemWidth = track.querySelector('.slider-item').offsetWidth + 24;
+    track.scrollBy({ left: itemWidth * dir, behavior: 'smooth' });
+  }
 
   function slideLeft() {
     const track = document.getElementById('sliderTrack');

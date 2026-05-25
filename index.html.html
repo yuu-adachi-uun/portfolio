@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0046)file:///C:/Users/yuuad/Downloads/index_10.html -->
+<!-- saved from url=(0046)file:///C:/Users/yuuad/Downloads/index_11.html -->
 <html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -362,37 +362,127 @@
 
   footer { background: var(--dark-bg); color: rgba(255,255,255,0.3); padding: 2rem 6rem; display: flex; justify-content: space-between; align-items: center; }
   footer p { font-family: 'Josefin Sans', sans-serif; font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; }
-  .fade-in { opacity: 0; transform: translateY(16px); transition: opacity 0.8s ease, transform 0.8s ease; }
-  .fade-in.visible { opacity: 1; transform: translateY(0); }
+  .hamburger { display: none; }
+  .mobile-menu { display: none; }
+  .mobile-menu.open { display: flex; }
   @media (max-width: 960px) {
+    /* NAV */
     nav { padding: 1rem 1.5rem; }
-    .nav-links { gap: 1.2rem; }
+    .nav-right { gap: 1rem; }
+    .nav-links { display: none; }
+    .nav-social { display: none; }
+    .hamburger {
+      display: flex; flex-direction: column; justify-content: center;
+      gap: 5px; cursor: pointer; padding: 4px;
+      background: none; border: none;
+    }
+    .hamburger span {
+      display: block; width: 22px; height: 1.5px;
+      background: var(--ink); transition: all 0.3s;
+    }
+    .mobile-menu {
+      display: none;
+      position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+      background: var(--warm-white);
+      z-index: 200;
+      flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 2.5rem;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 1.8rem; font-weight: 800;
+      color: var(--ink); text-decoration: none;
+      letter-spacing: 0.05em;
+    }
+    .mobile-menu-close {
+      position: absolute; top: 1.5rem; right: 1.5rem;
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.7rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--muted);
+      background: none; border: none; cursor: pointer;
+    }
+    .mobile-social {
+      display: flex; gap: 1.5rem; margin-top: 1rem;
+    }
+    .mobile-social a { color: var(--muted); }
+    .mobile-social svg { width: 20px; height: 20px; fill: currentColor; }
+
+    /* HERO */
     #hero { grid-template-columns: 1fr; min-height: auto; }
-    .hero-left { padding: 5rem 2rem 3rem; }
+    .hero-left { padding: 5rem 1.5rem 2.5rem; }
     .hero-left::after { display: none; }
-    .hero-right { padding: 3rem 2rem; }
-    .stat-grid { grid-template-columns: repeat(2, 1fr); }
-    section { padding: 5rem 2rem; }
-    .about-grid { grid-template-columns: 1fr; gap: 3rem; }
-    .exp-item { grid-template-columns: 1fr; gap: 0.3rem; }
+    .hero-name { font-size: 3rem; }
+    .hero-desc { font-size: 0.95rem; max-width: 100%; }
+    .hero-actions { flex-direction: column; }
+    .btn-primary, .btn-secondary { text-align: center; justify-content: center; }
+    .hero-right { padding: 2.5rem 1.5rem; }
+    .stat-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+    .stat-num { font-size: 1.8rem; }
+    .hero-social-block { padding-top: 1.2rem; }
+    .social-links { flex-wrap: wrap; }
+
+    /* SECTIONS */
+    section { padding: 4rem 1.5rem; }
+    .section-title { font-size: 1.6rem; }
+    .section-header { gap: 1rem; margin-bottom: 2.5rem; }
+    .section-line { display: none; }
+
+    /* ABOUT */
+    .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .about-text p { font-size: 0.95rem; }
+
+    /* EXPERIENCE */
+    .exp-item { grid-template-columns: 1fr; gap: 0.5rem; padding: 2rem 0; }
+    .exp-company { font-size: 1.1rem; }
+    .exp-desc { font-size: 0.9rem; }
+
+    /* WORKS */
+    .works-grid { grid-template-columns: 1fr; gap: 1rem; }
+
+    /* BLOG */
+    .blog-item { grid-template-columns: 1fr auto; gap: 1rem; }
+    .blog-date { display: none; }
+    .blog-post-title { font-size: 1.4rem; }
+    .blog-post-body p { font-size: 0.93rem; }
+    .reactions-buttons { flex-direction: column; gap: 0.6rem; }
+    .reaction-btn { width: 100%; justify-content: space-between; }
+
+    /* MEDIA */
     .media-grid { grid-template-columns: 1fr; background: none; gap: 1px; }
-    .works-grid { grid-template-columns: 1fr; }
-    footer { flex-direction: column; gap: 0.8rem; text-align: center; padding: 1.8rem 2rem; }
+
+    /* CONTACT */
+    .contact-title { font-size: 1.8rem; }
+    .contact-sub { font-size: 0.9rem; }
+    .contact-social { flex-direction: column; align-items: center; gap: 1rem; }
+
+    /* FOOTER */
+    footer { flex-direction: column; gap: 0.8rem; text-align: center; padding: 1.8rem 1.5rem; }
+  }
+
+  @media (max-width: 480px) {
+    .hero-name { font-size: 2.5rem; }
+    .stat-grid { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
+    .stat-num { font-size: 1.5rem; }
+    .exp-tags { gap: 0.3rem; }
+    .exp-tag { font-size: 0.58rem; }
+    .blog-post-title { font-size: 1.2rem; }
   }
 </style>
 </head>
 <body>
 
 <nav>
-  <a href="file:///C:/Users/yuuad/Downloads/index_10.html#hero" class="nav-logo">足立 優</a>
+  <a href="file:///C:/Users/yuuad/Downloads/index_11.html#hero" class="nav-logo">足立 優</a>
   <div class="nav-right">
     <ul class="nav-links">
-      <li><a href="file:///C:/Users/yuuad/Downloads/index_10.html#about">About</a></li>
-      <li><a href="file:///C:/Users/yuuad/Downloads/index_10.html#experience">Experience</a></li>
-      <li><a href="file:///C:/Users/yuuad/Downloads/index_10.html#works">Works</a></li>
-      <li><a href="file:///C:/Users/yuuad/Downloads/index_10.html#blog">Blog</a></li>
-      <li><a href="file:///C:/Users/yuuad/Downloads/index_10.html#media">Media</a></li>
-      <li><a href="file:///C:/Users/yuuad/Downloads/index_10.html#contact">Contact</a></li>
+      <li><a href="file:///C:/Users/yuuad/Downloads/index_11.html#about">About</a></li>
+      <li><a href="file:///C:/Users/yuuad/Downloads/index_11.html#experience">Experience</a></li>
+      <li><a href="file:///C:/Users/yuuad/Downloads/index_11.html#works">Works</a></li>
+      <li><a href="file:///C:/Users/yuuad/Downloads/index_11.html#blog">Blog</a></li>
+      <li><a href="file:///C:/Users/yuuad/Downloads/index_11.html#media">Media</a></li>
+      <li><a href="file:///C:/Users/yuuad/Downloads/index_11.html#contact">Contact</a></li>
     </ul>
     <div class="nav-social">
       <a href="https://www.linkedin.com/in/%E5%84%AA-%E8%B6%B3%E7%AB%8B-1187ba326/" target="_blank" aria-label="LinkedIn">
@@ -402,8 +492,30 @@
         <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
       </a>
     </div>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-menu-close" onclick="toggleMenu()">✕ Close</button>
+  <a href="file:///C:/Users/yuuad/Downloads/index_11.html#about" onclick="toggleMenu()">About</a>
+  <a href="file:///C:/Users/yuuad/Downloads/index_11.html#experience" onclick="toggleMenu()">Experience</a>
+  <a href="file:///C:/Users/yuuad/Downloads/index_11.html#works" onclick="toggleMenu()">Works</a>
+  <a href="file:///C:/Users/yuuad/Downloads/index_11.html#blog" onclick="toggleMenu()">Blog</a>
+  <a href="file:///C:/Users/yuuad/Downloads/index_11.html#media" onclick="toggleMenu()">Media</a>
+  <a href="file:///C:/Users/yuuad/Downloads/index_11.html#contact" onclick="toggleMenu()">Contact</a>
+  <div class="mobile-social">
+    <a href="https://www.linkedin.com/in/%E5%84%AA-%E8%B6%B3%E7%AB%8B-1187ba326/" target="_blank">
+      <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
+    </a>
+    <a href="https://x.com/yuuadachiuun" target="_blank">
+      <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+    </a>
+  </div>
+</div>
 
 <section id="hero">
   <div class="hero-left">
@@ -415,8 +527,8 @@
     <p class="hero-name-en">Yuu Adachi</p>
     <p class="hero-desc">「徹底した顧客視点 × デジタル実装 × 組織変革」で企業の事業価値を最大化する、実効型DXコンサルタント。戦略策定からプロダクト開発・組織変革まで一気通貫で実行します。</p>
     <div class="hero-actions">
-      <a href="file:///C:/Users/yuuad/Downloads/index_10.html#contact" class="btn-primary">お問い合わせ →</a>
-      <a href="file:///C:/Users/yuuad/Downloads/index_10.html#experience" class="btn-secondary">経歴を見る</a>
+      <a href="file:///C:/Users/yuuad/Downloads/index_11.html#contact" class="btn-primary">お問い合わせ →</a>
+      <a href="file:///C:/Users/yuuad/Downloads/index_11.html#experience" class="btn-secondary">経歴を見る</a>
     </div>
   </div>
   <div class="hero-right">
@@ -455,12 +567,12 @@
 </section>
 
 <section id="about">
-  <div class="section-header fade-in visible">
+  <div class="section-header fade-in">
     <span class="section-eyebrow">01 — About</span>
     <h2 class="section-title">私について</h2>
     <div class="section-line"></div>
   </div>
-  <div class="about-grid fade-in visible">
+  <div class="about-grid fade-in">
     <div class="about-text">
       <p>飲食・小売業界での<strong>現場マネジメント経験</strong>を原体験に、テクノロジーで事業を変革するキャリアを歩んできました。カラオケチェーン運営会社では部長代理として、業界初の「受付レス予約システム」や自社専用デバイスのスクラッチ開発を主導。年間約<strong>20億円のコスト削減</strong>と過去最高益達成に貢献しました。</p>
       <p>大手ドラッグストアチェーンでは<strong>1,500万DL規模のアプリ</strong>のサービスオーナーとして、大手コンサルティングファームやデザインファームをマネジメントしながら、アジャイル組織への変革と生成AIのプロダクト開発プロセスへの実装を完遂。</p>
@@ -482,13 +594,13 @@
 </section>
 
 <section id="experience">
-  <div class="section-header fade-in visible">
+  <div class="section-header fade-in">
     <span class="section-eyebrow">02 — Experience</span>
     <h2 class="section-title">職務経歴</h2>
     <div class="section-line"></div>
   </div>
   <div class="exp-list">
-    <div class="exp-item fade-in visible">
+    <div class="exp-item fade-in">
       <div class="exp-period">2026.03 — Present<div class="exp-current">現職</div></div>
       <div>
         <div class="exp-company">フリーランス（独立コンサルタント）</div>
@@ -502,7 +614,7 @@
         </div>
       </div>
     </div>
-    <div class="exp-item fade-in visible">
+    <div class="exp-item fade-in">
       <div class="exp-period">2024.09 — 2026.02</div>
       <div>
         <div class="exp-company">大手ドラッグストアチェーン（DX戦略本部）</div>
@@ -516,7 +628,7 @@
         </div>
       </div>
     </div>
-    <div class="exp-item fade-in visible">
+    <div class="exp-item fade-in">
       <div class="exp-period">2012.06 — 2024.08</div>
       <div>
         <div class="exp-company">カラオケチェーン運営会社</div>
@@ -536,12 +648,12 @@
 
 <!-- WORKS -->
 <section id="works">
-  <div class="section-header fade-in visible">
+  <div class="section-header fade-in">
     <span class="section-eyebrow">04 — Works</span>
     <h2 class="section-title">制作物</h2>
     <div class="section-line"></div>
   </div>
-  <div class="works-grid fade-in visible">
+  <div class="works-grid fade-in">
     <a href="https://portfolio-bay-eight-86.vercel.app/" target="_blank" class="work-card">
       <div class="work-badge live">Live</div>
       <div class="work-name">ポートフォリオサイト</div>
@@ -563,25 +675,25 @@
 
 <!-- BLOG -->
 <section id="blog">
-  <div class="section-header fade-in visible">
+  <div class="section-header fade-in">
     <span class="section-eyebrow">05 — Blog</span>
     <h2 class="section-title">ブログ・発信</h2>
     <div class="section-line"></div>
   </div>
-  <div class="fade-in visible">
-    <div class="blog-list" style="display: none;">
-      <a href="file:///C:/Users/yuuad/Downloads/index_10.html#blog-post-1" class="blog-item" onclick="togglePost(event, &#39;blog-post-1&#39;)">
+  <div class="fade-in">
+    <div class="blog-list">
+      <a href="file:///C:/Users/yuuad/Downloads/index_11.html#blog-post-1" class="blog-item" onclick="togglePost(event, &#39;blog-post-1&#39;)">
         <div class="blog-date">2026.04</div>
         <div class="blog-title">引越し相見積もりで学んだ「DXが価格を動かす」という話</div>
         <div class="blog-arrow">Read →</div>
       </a>
-      <a href="file:///C:/Users/yuuad/Downloads/index_10.html#blog-post-2" class="blog-item" onclick="togglePost(event, &#39;blog-post-2&#39;)">
+      <a href="file:///C:/Users/yuuad/Downloads/index_11.html#blog-post-2" class="blog-item" onclick="togglePost(event, &#39;blog-post-2&#39;)">
         <div class="blog-date">2026.05</div>
         <div class="blog-title">人気ヘアサロンの体験をUXリサーチとして読み解く</div>
         <div class="blog-arrow">Read →</div>
       </a>
     </div>
-    <div id="blog-post-1" class="blog-post" style="display: block;">
+    <div id="blog-post-1" class="blog-post" style="display:none;">
       <button class="blog-close" onclick="togglePost(event, &#39;blog-post-1&#39;)">← 一覧に戻る</button>
       <div class="blog-post-header">
         <div class="blog-post-date">2026.04</div>
@@ -640,12 +752,12 @@
 </section>
 
 <section id="media">
-  <div class="section-header fade-in visible">
+  <div class="section-header fade-in">
     <span class="section-eyebrow">06 — Media</span>
     <h2 class="section-title">メディア掲載</h2>
     <div class="section-line"></div>
   </div>
-  <div class="media-grid fade-in visible">
+  <div class="media-grid fade-in">
     <a href="https://dx.sugi-recruit.jp/project-story/article/service-team" target="_blank" class="media-card">
       <div class="media-source">スギ薬局公式ブログ</div>
       <div class="media-title">分業体制からの脱却。サービス型チームへの変革ストーリー</div>
@@ -665,7 +777,7 @@
 </section>
 
 <section id="contact">
-  <div class="contact-inner fade-in visible">
+  <div class="contact-inner fade-in">
     <div class="contact-tag">Contact</div>
     <h2 class="contact-title">お仕事の<br>ご相談はこちら</h2>
     <p class="contact-sub">DX戦略の立案、プロダクトマネジメント、生成AIの組織実装など、<br>お気軽にご相談ください。</p>
@@ -693,6 +805,12 @@
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.1 });
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('open');
+    document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+  }
 
   function togglePost(event, id) {
     const post = document.getElementById(id);

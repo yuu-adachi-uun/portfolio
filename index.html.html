@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0045)file:///C:/Users/yuuad/Downloads/index_7.html -->
+<!-- saved from url=(0045)file:///C:/Users/yuuad/Downloads/index_8.html -->
 <html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -359,6 +359,40 @@
     padding-left: 1rem; border-left: 3px solid var(--sage-light);
   }
   .blog-post-note { font-size: 0.85rem !important; color: var(--muted) !important; margin-top: 2rem; }
+  .blog-reactions {
+    margin-top: 3rem; padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+  .reactions-label {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.68rem; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--muted);
+    margin-bottom: 1.2rem;
+  }
+  .reactions-buttons { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+  .reaction-btn {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.7rem 1.2rem;
+    border: 1px solid var(--border);
+    background: var(--cream);
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+  .reaction-btn:hover { border-color: var(--sage-light); color: var(--sage-dark); background: rgba(122,158,142,0.06); }
+  .reaction-btn.reacted { border-color: var(--sage); background: rgba(122,158,142,0.12); color: var(--sage-dark); }
+  .reaction-icon { font-size: 1rem; }
+  .reaction-text { font-size: 0.82rem; }
+  .reaction-count {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.72rem; font-weight: 400;
+    color: var(--sage-dark);
+    background: rgba(122,158,142,0.15);
+    padding: 0.1rem 0.5rem;
+    min-width: 1.5rem; text-align: center;
+  }
 
   footer { background: var(--dark-bg); color: rgba(255,255,255,0.3); padding: 2rem 6rem; display: flex; justify-content: space-between; align-items: center; }
   footer p { font-family: 'Josefin Sans', sans-serif; font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; }
@@ -384,15 +418,15 @@
 <body>
 
 <nav>
-  <a href="file:///C:/Users/yuuad/Downloads/index_7.html#hero" class="nav-logo">足立 優</a>
+  <a href="file:///C:/Users/yuuad/Downloads/index_8.html#hero" class="nav-logo">足立 優</a>
   <div class="nav-right">
     <ul class="nav-links">
-      <li><a href="file:///C:/Users/yuuad/Downloads/index_7.html#about">About</a></li>
-      <li><a href="file:///C:/Users/yuuad/Downloads/index_7.html#experience">Experience</a></li>
-      <li><a href="file:///C:/Users/yuuad/Downloads/index_7.html#works">Works</a></li>
-      <li><a href="file:///C:/Users/yuuad/Downloads/index_7.html#blog">Blog</a></li>
-      <li><a href="file:///C:/Users/yuuad/Downloads/index_7.html#media">Media</a></li>
-      <li><a href="file:///C:/Users/yuuad/Downloads/index_7.html#contact">Contact</a></li>
+      <li><a href="file:///C:/Users/yuuad/Downloads/index_8.html#about">About</a></li>
+      <li><a href="file:///C:/Users/yuuad/Downloads/index_8.html#experience">Experience</a></li>
+      <li><a href="file:///C:/Users/yuuad/Downloads/index_8.html#works">Works</a></li>
+      <li><a href="file:///C:/Users/yuuad/Downloads/index_8.html#blog">Blog</a></li>
+      <li><a href="file:///C:/Users/yuuad/Downloads/index_8.html#media">Media</a></li>
+      <li><a href="file:///C:/Users/yuuad/Downloads/index_8.html#contact">Contact</a></li>
     </ul>
     <div class="nav-social">
       <a href="https://www.linkedin.com/in/%E5%84%AA-%E8%B6%B3%E7%AB%8B-1187ba326/" target="_blank" aria-label="LinkedIn">
@@ -415,8 +449,8 @@
     <p class="hero-name-en">Yuu Adachi</p>
     <p class="hero-desc">「徹底した顧客視点 × デジタル実装 × 組織変革」で企業の事業価値を最大化する、実効型DXコンサルタント。戦略策定からプロダクト開発・組織変革まで一気通貫で実行します。</p>
     <div class="hero-actions">
-      <a href="file:///C:/Users/yuuad/Downloads/index_7.html#contact" class="btn-primary">お問い合わせ →</a>
-      <a href="file:///C:/Users/yuuad/Downloads/index_7.html#experience" class="btn-secondary">経歴を見る</a>
+      <a href="file:///C:/Users/yuuad/Downloads/index_8.html#contact" class="btn-primary">お問い合わせ →</a>
+      <a href="file:///C:/Users/yuuad/Downloads/index_8.html#experience" class="btn-secondary">経歴を見る</a>
     </div>
   </div>
   <div class="hero-right">
@@ -455,12 +489,12 @@
 </section>
 
 <section id="about">
-  <div class="section-header fade-in visible">
+  <div class="section-header fade-in">
     <span class="section-eyebrow">01 — About</span>
     <h2 class="section-title">私について</h2>
     <div class="section-line"></div>
   </div>
-  <div class="about-grid fade-in visible">
+  <div class="about-grid fade-in">
     <div class="about-text">
       <p>飲食・小売業界での<strong>現場マネジメント経験</strong>を原体験に、テクノロジーで事業を変革するキャリアを歩んできました。カラオケチェーン運営会社では部長代理として、業界初の「受付レス予約システム」や自社専用デバイスのスクラッチ開発を主導。年間約<strong>20億円のコスト削減</strong>と過去最高益達成に貢献しました。</p>
       <p>大手ドラッグストアチェーンでは<strong>1,500万DL規模のアプリ</strong>のサービスオーナーとして、大手コンサルティングファームやデザインファームをマネジメントしながら、アジャイル組織への変革と生成AIのプロダクト開発プロセスへの実装を完遂。</p>
@@ -482,13 +516,13 @@
 </section>
 
 <section id="experience">
-  <div class="section-header fade-in visible">
+  <div class="section-header fade-in">
     <span class="section-eyebrow">02 — Experience</span>
     <h2 class="section-title">職務経歴</h2>
     <div class="section-line"></div>
   </div>
   <div class="exp-list">
-    <div class="exp-item fade-in visible">
+    <div class="exp-item fade-in">
       <div class="exp-period">2026.03 — Present<div class="exp-current">現職</div></div>
       <div>
         <div class="exp-company">フリーランス（独立コンサルタント）</div>
@@ -502,7 +536,7 @@
         </div>
       </div>
     </div>
-    <div class="exp-item fade-in visible">
+    <div class="exp-item fade-in">
       <div class="exp-period">2024.09 — 2026.02</div>
       <div>
         <div class="exp-company">大手ドラッグストアチェーン（DX戦略本部）</div>
@@ -516,7 +550,7 @@
         </div>
       </div>
     </div>
-    <div class="exp-item fade-in visible">
+    <div class="exp-item fade-in">
       <div class="exp-period">2012.06 — 2024.08</div>
       <div>
         <div class="exp-company">カラオケチェーン運営会社</div>
@@ -536,12 +570,12 @@
 
 <!-- WORKS -->
 <section id="works">
-  <div class="section-header fade-in visible">
+  <div class="section-header fade-in">
     <span class="section-eyebrow">04 — Works</span>
     <h2 class="section-title">制作物</h2>
     <div class="section-line"></div>
   </div>
-  <div class="works-grid fade-in visible">
+  <div class="works-grid fade-in">
     <a href="https://portfolio-bay-eight-86.vercel.app/" target="_blank" class="work-card">
       <div class="work-badge live">Live</div>
       <div class="work-name">ポートフォリオサイト</div>
@@ -563,19 +597,19 @@
 
 <!-- BLOG -->
 <section id="blog">
-  <div class="section-header fade-in visible">
+  <div class="section-header fade-in">
     <span class="section-eyebrow">05 — Blog</span>
     <h2 class="section-title">ブログ・発信</h2>
     <div class="section-line"></div>
   </div>
-  <div class="fade-in visible">
-    <div class="blog-list" style="display: none;">
-      <a href="file:///C:/Users/yuuad/Downloads/index_7.html#blog-post-1" class="blog-item" onclick="togglePost(event, &#39;blog-post-1&#39;)">
+  <div class="fade-in">
+    <div class="blog-list">
+      <a href="file:///C:/Users/yuuad/Downloads/index_8.html#blog-post-1" class="blog-item" onclick="togglePost(event, &#39;blog-post-1&#39;)">
         <div class="blog-date">2026.04</div>
         <div class="blog-title">引越し相見積もりで学んだ「DXが価格を動かす」という話</div>
         <div class="blog-arrow">Read →</div>
       </a>
-      <a href="file:///C:/Users/yuuad/Downloads/index_7.html#blog-post-2" class="blog-item" onclick="togglePost(event, &#39;blog-post-2&#39;)">
+      <a href="file:///C:/Users/yuuad/Downloads/index_8.html#blog-post-2" class="blog-item" onclick="togglePost(event, &#39;blog-post-2&#39;)">
         <div class="blog-date">2026.05</div>
         <div class="blog-title">人気ヘアサロンの体験をUXリサーチとして読み解く</div>
         <div class="blog-arrow">Read →</div>
@@ -603,10 +637,30 @@
         <p>DXはユーザー体験を向上させるだけでなく、コスト構造を変え、価格競争力を高め、結果的に成約率に繋がる。プロダクトマネジャーとして頭では理解していたことが、引越しという日常の体験を通じてリアルに腹落ちした瞬間だった。</p>
         <p>日常のあらゆる体験をプロダクトとユーザーの視点で観察することが、私のPdMとしての原動力になっています。</p>
         <p class="blog-post-note">見積もりにご協力いただいた各社さんに感謝です。</p>
+        <div class="blog-reactions" id="reactions-1">
+          <p class="reactions-label">この記事はいかがでしたか？</p>
+          <div class="reactions-buttons">
+            <button class="reaction-btn" onclick="react(&#39;reactions-1&#39;, &#39;good&#39;)">
+              <span class="reaction-icon">👍</span>
+              <span class="reaction-text">参考になった</span>
+              <span class="reaction-count" id="reactions-1-good">0</span>
+            </button>
+            <button class="reaction-btn" onclick="react(&#39;reactions-1&#39;, &#39;more&#39;)">
+              <span class="reaction-icon">🔥</span>
+              <span class="reaction-text">もっと読みたい</span>
+              <span class="reaction-count" id="reactions-1-more">0</span>
+            </button>
+            <button class="reaction-btn" onclick="react(&#39;reactions-1&#39;, &#39;think&#39;)">
+              <span class="reaction-icon">🤔</span>
+              <span class="reaction-text">考えさせられた</span>
+              <span class="reaction-count" id="reactions-1-think">0</span>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div id="blog-post-2" class="blog-post" style="display: block;">
+    <div id="blog-post-2" class="blog-post" style="display:none;">
       <button class="blog-close" onclick="togglePost(event, &#39;blog-post-2&#39;)">← 一覧に戻る</button>
       <div class="blog-post-header">
         <div class="blog-post-date">2026.05</div>
@@ -632,18 +686,38 @@
         <p>ユーザーが言いたいことをうまく言語化できなくても、それを汲み取って返す力。スタイリストだけでなくアシスタントも含めたチーム全体がプロとして機能していること。SNSと現地体験が深く繋がっていること。</p>
         <p>これらは、専門的なアドバイスを必要とするプロダクト体験を設計する上でも、そのまま活かせる示唆だと感じた。「ユーザーが言語化できないニーズを引き出す設計」は、どの領域のプロダクトにも通じる普遍的なテーマだ。</p>
         <p>日常の体験から学べることは、まだまだたくさんある。</p>
+        <div class="blog-reactions" id="reactions-2">
+          <p class="reactions-label">この記事はいかがでしたか？</p>
+          <div class="reactions-buttons">
+            <button class="reaction-btn" onclick="react(&#39;reactions-2&#39;, &#39;good&#39;)">
+              <span class="reaction-icon">👍</span>
+              <span class="reaction-text">参考になった</span>
+              <span class="reaction-count" id="reactions-2-good">0</span>
+            </button>
+            <button class="reaction-btn" onclick="react(&#39;reactions-2&#39;, &#39;more&#39;)">
+              <span class="reaction-icon">🔥</span>
+              <span class="reaction-text">もっと読みたい</span>
+              <span class="reaction-count" id="reactions-2-more">0</span>
+            </button>
+            <button class="reaction-btn" onclick="react(&#39;reactions-2&#39;, &#39;think&#39;)">
+              <span class="reaction-icon">🤔</span>
+              <span class="reaction-text">考えさせられた</span>
+              <span class="reaction-count" id="reactions-2-think">0</span>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <section id="media">
-  <div class="section-header fade-in visible">
+  <div class="section-header fade-in">
     <span class="section-eyebrow">06 — Media</span>
     <h2 class="section-title">メディア掲載</h2>
     <div class="section-line"></div>
   </div>
-  <div class="media-grid fade-in visible">
+  <div class="media-grid fade-in">
     <a href="https://dx.sugi-recruit.jp/project-story/article/service-team" target="_blank" class="media-card">
       <div class="media-source">スギ薬局公式ブログ</div>
       <div class="media-title">分業体制からの脱却。サービス型チームへの変革ストーリー</div>
@@ -692,7 +766,19 @@
   }, { threshold: 0.1 });
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-  function togglePost(event, id) {
+  function react(blockId, type) {
+    const btn = document.querySelector(`#${blockId} .reaction-btn[onclick="react('${blockId}', '${type}')"]`);
+    const countEl = document.getElementById(`${blockId}-${type}`);
+    const alreadyReacted = btn.classList.contains('reacted');
+
+    if (alreadyReacted) {
+      btn.classList.remove('reacted');
+      countEl.textContent = Math.max(0, parseInt(countEl.textContent) - 1);
+    } else {
+      btn.classList.add('reacted');
+      countEl.textContent = parseInt(countEl.textContent) + 1;
+    }
+  }
     event.preventDefault();
     const post = document.getElementById(id);
     const blogSection = document.getElementById('blog');

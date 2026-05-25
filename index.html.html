@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="UTF-8">
+<!-- saved from url=(0045)file:///C:/Users/yuuad/Downloads/index_5.html -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>足立 優 | DXコンサルタント・プロダクトマネージャー</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;800&family=Josefin+Sans:wght@300;400&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link href="./index.html_files/css2" rel="stylesheet">
 <style>
   :root {
     --cream: #f7f4ef;
@@ -262,6 +262,76 @@
   .contact-social a { display: inline-flex; align-items: center; gap: 0.5rem; font-family: 'Josefin Sans', sans-serif; font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
   .contact-social a:hover { color: var(--sage-dark); }
   .contact-social svg { width: 14px; height: 14px; fill: currentColor; }
+  /* ── WORKS ── */
+  #works { background: var(--cream); }
+  .works-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .work-card {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    padding: 2rem;
+    text-decoration: none;
+    display: block;
+    transition: border-color 0.2s, transform 0.2s;
+    position: relative;
+  }
+  .work-card:hover { border-color: var(--sage-light); transform: translateY(-4px); }
+  .work-card.coming-soon { opacity: 0.5; cursor: default; }
+  .work-badge {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.6rem; letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.6rem;
+    margin-bottom: 1.2rem;
+    display: inline-block;
+  }
+  .work-badge.live { background: rgba(122,158,142,0.15); color: var(--sage-dark); border: 1px solid var(--sage-light); }
+  .work-badge.wip { background: rgba(181,147,90,0.12); color: var(--gold); border: 1px solid rgba(181,147,90,0.3); }
+  .work-name {
+    font-family: 'Shippori Mincho', serif;
+    font-weight: 600; font-size: 1.1rem;
+    color: var(--ink); margin-bottom: 0.5rem;
+  }
+  .work-desc { font-size: 0.88rem; line-height: 1.8; color: var(--muted); margin-bottom: 1.2rem; }
+  .work-arrow {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.65rem; letter-spacing: 0.15em;
+    color: var(--sage-dark); text-transform: uppercase;
+  }
+
+  /* ── BLOG ── */
+  #blog { background: var(--warm-white); }
+  .blog-list { display: flex; flex-direction: column; gap: 0; }
+  .blog-item {
+    display: grid; grid-template-columns: 120px 1fr auto;
+    gap: 2rem; padding: 2rem 0;
+    border-bottom: 1px solid var(--border);
+    align-items: center;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .blog-item:first-child { border-top: 1px solid var(--border); }
+  .blog-item.coming-soon { cursor: default; opacity: 0.5; }
+  .blog-date {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.68rem; letter-spacing: 0.1em;
+    color: var(--muted); text-transform: uppercase;
+  }
+  .blog-title {
+    font-size: 0.95rem; color: var(--ink); line-height: 1.6;
+  }
+  .blog-arrow {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.65rem; letter-spacing: 0.1em;
+    color: var(--sage); white-space: nowrap;
+  }
+  .blog-coming {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.65rem; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--muted);
+    text-align: center; padding: 3rem 0;
+    border: 1px dashed var(--border);
+  }
+
   footer { background: var(--dark-bg); color: rgba(255,255,255,0.3); padding: 2rem 6rem; display: flex; justify-content: space-between; align-items: center; }
   footer p { font-family: 'Josefin Sans', sans-serif; font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; }
   .fade-in { opacity: 0; transform: translateY(16px); transition: opacity 0.8s ease, transform 0.8s ease; }
@@ -278,6 +348,7 @@
     .about-grid { grid-template-columns: 1fr; gap: 3rem; }
     .exp-item { grid-template-columns: 1fr; gap: 0.3rem; }
     .media-grid { grid-template-columns: 1fr; background: none; gap: 1px; }
+    .works-grid { grid-template-columns: 1fr; }
     footer { flex-direction: column; gap: 0.8rem; text-align: center; padding: 1.8rem 2rem; }
   }
 </style>
@@ -285,20 +356,22 @@
 <body>
 
 <nav>
-  <a href="#hero" class="nav-logo">足立 優</a>
+  <a href="file:///C:/Users/yuuad/Downloads/index_5.html#hero" class="nav-logo">足立 優</a>
   <div class="nav-right">
     <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#media">Media</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="file:///C:/Users/yuuad/Downloads/index_5.html#about">About</a></li>
+      <li><a href="file:///C:/Users/yuuad/Downloads/index_5.html#experience">Experience</a></li>
+      <li><a href="file:///C:/Users/yuuad/Downloads/index_5.html#works">Works</a></li>
+      <li><a href="file:///C:/Users/yuuad/Downloads/index_5.html#blog">Blog</a></li>
+      <li><a href="file:///C:/Users/yuuad/Downloads/index_5.html#media">Media</a></li>
+      <li><a href="file:///C:/Users/yuuad/Downloads/index_5.html#contact">Contact</a></li>
     </ul>
     <div class="nav-social">
       <a href="https://www.linkedin.com/in/%E5%84%AA-%E8%B6%B3%E7%AB%8B-1187ba326/" target="_blank" aria-label="LinkedIn">
-        <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
       </a>
       <a href="https://x.com/yuuadachiuun" target="_blank" aria-label="X">
-        <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
       </a>
     </div>
   </div>
@@ -308,14 +381,14 @@
   <div class="hero-left">
     <p class="hero-eyebrow">Freelance DX Consultant &amp; Product Manager</p>
     <div class="hero-photo">
-      <img src="photo.webp" alt="足立 優">
+      <img src="./index.html_files/photo.webp" alt="足立 優">
     </div>
     <h1 class="hero-name">足立 優</h1>
     <p class="hero-name-en">Yuu Adachi</p>
     <p class="hero-desc">「徹底した顧客視点 × デジタル実装 × 組織変革」で企業の事業価値を最大化する、実効型DXコンサルタント。戦略策定からプロダクト開発・組織変革まで一気通貫で実行します。</p>
     <div class="hero-actions">
-      <a href="#contact" class="btn-primary">お問い合わせ →</a>
-      <a href="#experience" class="btn-secondary">経歴を見る</a>
+      <a href="file:///C:/Users/yuuad/Downloads/index_5.html#contact" class="btn-primary">お問い合わせ →</a>
+      <a href="file:///C:/Users/yuuad/Downloads/index_5.html#experience" class="btn-secondary">経歴を見る</a>
     </div>
   </div>
   <div class="hero-right">
@@ -341,11 +414,11 @@
       <div class="social-label">Connect</div>
       <div class="social-links">
         <a href="https://www.linkedin.com/in/%E5%84%AA-%E8%B6%B3%E7%AB%8B-1187ba326/" target="_blank" class="social-link">
-          <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
           LinkedIn
         </a>
         <a href="https://x.com/yuuadachiuun" target="_blank" class="social-link">
-          <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
           X / Twitter
         </a>
       </div>
@@ -433,9 +506,48 @@
   </div>
 </section>
 
+<!-- WORKS -->
+<section id="works">
+  <div class="section-header fade-in">
+    <span class="section-eyebrow">04 — Works</span>
+    <h2 class="section-title">制作物</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="works-grid fade-in">
+    <a href="https://portfolio-bay-eight-86.vercel.app/" target="_blank" class="work-card">
+      <div class="work-badge live">Live</div>
+      <div class="work-name">ポートフォリオサイト</div>
+      <div class="work-desc">本サイト。バイブコーディングで制作・公開したポートフォリオ。HTML / CSS / Vercel。</div>
+      <div class="work-arrow">View Site →</div>
+    </a>
+    <div class="work-card coming-soon">
+      <div class="work-badge wip">Coming Soon</div>
+      <div class="work-name">制作中</div>
+      <div class="work-desc">次のプロダクトを準備中です。</div>
+    </div>
+    <div class="work-card coming-soon">
+      <div class="work-badge wip">Coming Soon</div>
+      <div class="work-name">制作中</div>
+      <div class="work-desc">次のプロダクトを準備中です。</div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section id="blog">
+  <div class="section-header fade-in">
+    <span class="section-eyebrow">05 — Blog</span>
+    <h2 class="section-title">ブログ・発信</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="fade-in">
+    <div class="blog-coming">記事を準備中です。近日公開予定。</div>
+  </div>
+</section>
+
 <section id="media">
   <div class="section-header fade-in">
-    <span class="section-eyebrow">03 — Media</span>
+    <span class="section-eyebrow">06 — Media</span>
     <h2 class="section-title">メディア掲載</h2>
     <div class="section-line"></div>
   </div>
@@ -466,11 +578,11 @@
     <a href="mailto:yuu.adachi.uun@gmail.com" class="btn-primary">メールで問い合わせる →</a>
     <div class="contact-social">
       <a href="https://www.linkedin.com/in/%E5%84%AA-%E8%B6%B3%E7%AB%8B-1187ba326/" target="_blank">
-        <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
         LinkedIn
       </a>
       <a href="https://x.com/yuuadachiuun" target="_blank">
-        <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
         X / Twitter
       </a>
     </div>
@@ -488,5 +600,6 @@
   }, { threshold: 0.1 });
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 </script>
-</body>
-</html>
+
+
+</body></html>

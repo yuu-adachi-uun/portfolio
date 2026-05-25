@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0045)file:///C:/Users/yuuad/Downloads/index_5.html -->
+<!-- saved from url=(0045)file:///C:/Users/yuuad/Downloads/index_6.html -->
 <html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -331,6 +331,34 @@
     text-align: center; padding: 3rem 0;
     border: 1px dashed var(--border);
   }
+  .blog-post { margin-top: 2rem; max-width: 720px; }
+  .blog-close {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.7rem; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--sage-dark);
+    background: none; border: none; cursor: pointer;
+    margin-bottom: 2.5rem; padding: 0; transition: color 0.2s;
+  }
+  .blog-close:hover { color: var(--sage); }
+  .blog-post-header { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+  .blog-post-date {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.65rem; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--sage); margin-bottom: 1rem;
+  }
+  .blog-post-title {
+    font-family: 'Shippori Mincho', serif;
+    font-weight: 800; font-size: 1.8rem;
+    line-height: 1.4; color: var(--ink);
+  }
+  .blog-post-body p { font-size: 1rem; line-height: 2.1; color: #4a4540; margin-bottom: 1.5rem; }
+  .blog-post-body h3 {
+    font-family: 'Shippori Mincho', serif;
+    font-weight: 600; font-size: 1.15rem;
+    color: var(--ink); margin: 2.5rem 0 1rem;
+    padding-left: 1rem; border-left: 3px solid var(--sage-light);
+  }
+  .blog-post-note { font-size: 0.85rem !important; color: var(--muted) !important; margin-top: 2rem; }
 
   footer { background: var(--dark-bg); color: rgba(255,255,255,0.3); padding: 2rem 6rem; display: flex; justify-content: space-between; align-items: center; }
   footer p { font-family: 'Josefin Sans', sans-serif; font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; }
@@ -356,15 +384,15 @@
 <body>
 
 <nav>
-  <a href="file:///C:/Users/yuuad/Downloads/index_5.html#hero" class="nav-logo">足立 優</a>
+  <a href="file:///C:/Users/yuuad/Downloads/index_6.html#hero" class="nav-logo">足立 優</a>
   <div class="nav-right">
     <ul class="nav-links">
-      <li><a href="file:///C:/Users/yuuad/Downloads/index_5.html#about">About</a></li>
-      <li><a href="file:///C:/Users/yuuad/Downloads/index_5.html#experience">Experience</a></li>
-      <li><a href="file:///C:/Users/yuuad/Downloads/index_5.html#works">Works</a></li>
-      <li><a href="file:///C:/Users/yuuad/Downloads/index_5.html#blog">Blog</a></li>
-      <li><a href="file:///C:/Users/yuuad/Downloads/index_5.html#media">Media</a></li>
-      <li><a href="file:///C:/Users/yuuad/Downloads/index_5.html#contact">Contact</a></li>
+      <li><a href="file:///C:/Users/yuuad/Downloads/index_6.html#about">About</a></li>
+      <li><a href="file:///C:/Users/yuuad/Downloads/index_6.html#experience">Experience</a></li>
+      <li><a href="file:///C:/Users/yuuad/Downloads/index_6.html#works">Works</a></li>
+      <li><a href="file:///C:/Users/yuuad/Downloads/index_6.html#blog">Blog</a></li>
+      <li><a href="file:///C:/Users/yuuad/Downloads/index_6.html#media">Media</a></li>
+      <li><a href="file:///C:/Users/yuuad/Downloads/index_6.html#contact">Contact</a></li>
     </ul>
     <div class="nav-social">
       <a href="https://www.linkedin.com/in/%E5%84%AA-%E8%B6%B3%E7%AB%8B-1187ba326/" target="_blank" aria-label="LinkedIn">
@@ -387,8 +415,8 @@
     <p class="hero-name-en">Yuu Adachi</p>
     <p class="hero-desc">「徹底した顧客視点 × デジタル実装 × 組織変革」で企業の事業価値を最大化する、実効型DXコンサルタント。戦略策定からプロダクト開発・組織変革まで一気通貫で実行します。</p>
     <div class="hero-actions">
-      <a href="file:///C:/Users/yuuad/Downloads/index_5.html#contact" class="btn-primary">お問い合わせ →</a>
-      <a href="file:///C:/Users/yuuad/Downloads/index_5.html#experience" class="btn-secondary">経歴を見る</a>
+      <a href="file:///C:/Users/yuuad/Downloads/index_6.html#contact" class="btn-primary">お問い合わせ →</a>
+      <a href="file:///C:/Users/yuuad/Downloads/index_6.html#experience" class="btn-secondary">経歴を見る</a>
     </div>
   </div>
   <div class="hero-right">
@@ -541,7 +569,48 @@
     <div class="section-line"></div>
   </div>
   <div class="fade-in">
-    <div class="blog-coming">記事を準備中です。近日公開予定。</div>
+    <div class="blog-list">
+      <a href="file:///C:/Users/yuuad/Downloads/index_6.html#blog-post-1" class="blog-item" onclick="togglePost(event, &#39;blog-post-1&#39;)">
+        <div class="blog-date">2026.04</div>
+        <div class="blog-title">引越し相見積もりで学んだ「DXが価格を動かす」という話</div>
+        <div class="blog-arrow">Read →</div>
+      </a>
+    </div>
+    <div id="blog-post-1" class="blog-post" style="display:none;">
+      <button class="blog-close" onclick="togglePost(event, &#39;blog-post-1&#39;)">← 一覧に戻る</button>
+      <div class="blog-post-header">
+        <div class="blog-post-date">2026.04</div>
+        <h2 class="blog-post-title">引越し相見積もりで学んだ<br>「DXが価格を動かす」という話</h2>
+      </div>
+      <div class="blog-post-body">
+        <p>引越しの費用は水ものだ。季節、タイミング、距離、荷物量によって上振れ下振れが激しい。だからこそ必ず3社で相見積もりをするようにしている。</p>
+
+        <p>今回は不動産仲介から紹介された1社に加え、一括見積もりサイトから数社に依頼。品質を担保したいので大手3社に絞った。サカイ引越センター、アリさんマークの引越社、そしてアート引越センターだ。</p>
+
+        <h3>オンライン見積もりという体験</h3>
+        <p>アート引越センターはオンライン見積もりだった。他の2社は現地見積もり。正直、オンラインで精度が出るか不安もあった。しかしいざ当日、スマホのアウトカメラで部屋を映しながら荷物を説明していくと、視覚情報があるぶん会話のラリーが圧倒的に少なく済んだ。ストレスは極めて少なかった。</p>
+
+        <p>一通りの確認が終わると「計算中に引越しのオンボーディング動画をご覧ください」と案内され、5分ほど視聴。待ち時間をコンテンツで埋めるUXの工夫も感じた。</p>
+
+        <h3>相見積もりの順番が重要だった</h3>
+        <p>1社目のサカイ引越センターは13万円。先出しなので控えめな提示だったが、肌感覚では10万円を下回れると読んでいた。</p>
+
+        <p>2社目のアート引越センターには「1社目が13万円」という情報を開示した上で交渉。提示は9万7,000円。オンライン見積もりの接客が丁寧で、価格とあわせて印象がよかった。即決を求める雰囲気もあったが「3社目が終わり次第連絡する」と伝えて保留。</p>
+
+        <p>3社目のアリさんマークの引越社は13万円。9万円台は難しいとすぐに手を引かれた。</p>
+
+        <p>3社が出揃ったところでサカイ引越センターに「他社で9万7,000円が出ている」と伝えると9万3,000円に。最終的にアート引越センターに「サカイが9万3,000円だった」と伝えると9万円で受けてくれることになった。</p>
+
+        <h3>DXはユーザー体験だけでなく価格競争力も変える</h3>
+        <p>ふと気づいたのは、現地見積もりをしていた2社は営業の人件費が高い分、引越費用にそれが転嫁されているのではないかということだ。アート引越センターはオンライン化によって営業コストを下げ、その分を価格競争力に変えていた。</p>
+
+        <p>DXはユーザー体験を向上させるだけでなく、コスト構造を変え、価格競争力を高め、結果的に成約率に繋がる。プロダクトマネジャーとして頭では理解していたことが、引越しという日常の体験を通じてリアルに腹落ちした瞬間だった。</p>
+
+        <p>日常のあらゆる体験をプロダクトとユーザーの視点で観察することが、私のPdMとしての原動力になっています。</p>
+
+        <p class="blog-post-note">見積もりにご協力いただいた各社さんに感謝です。</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -599,6 +668,18 @@
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.1 });
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  function togglePost(event, id) {
+    event.preventDefault();
+    const post = document.getElementById(id);
+    const list = post.previousElementSibling;
+    const isOpen = post.style.display === 'block';
+    post.style.display = isOpen ? 'none' : 'block';
+    list.style.display = isOpen ? 'flex' : 'none';
+    if (!isOpen) {
+      document.getElementById('blog').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
 </script>
 
 

@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<!-- saved from url=(0057)file:///C:/Users/yuuad/Downloads/persona-generator_1.html -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Persona Generator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link href="./AI Persona Generator_files/css2" rel="stylesheet">
+<style>
+  :root {
+    --cream: #f7f4ef;
+    --warm-white: #fdfbf8;
+    --sage: #7a9e8e;
+    --sage-light: #a8c4b7;
+    --sage-dark: #4d7566;
+    --gold: #b5935a;
+    --ink: #2a2620;
+    --muted: #8c8478;
+    --border: #e4dfd6;
+    --dark-bg: #1e1d1b;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 300;
+    min-height: 100vh;
+    line-height: 1.8;
+  }
+
+  /* HEADER */
+  header {
+    position: sticky; top: 0; z-index: 100;
+    padding: 1.2rem 3rem;
+    background: rgba(247,244,239,0.92);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .logo {
+    font-family: 'Shippori Mincho', serif;
+    font-weight: 800; font-size: 1rem;
+    letter-spacing: 0.05em; color: var(--ink);
+    text-decoration: none;
+  }
+  .header-sub {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.65rem; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--sage);
+  }
+  .back-link {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.65rem; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--muted);
+    text-decoration: none; transition: color 0.2s;
+  }
+  .back-link:hover { color: var(--sage-dark); }
+
+  /* MAIN */
+  main { max-width: 900px; margin: 0 auto; padding: 5rem 2rem 4rem; }
+
+  /* HERO */
+  .hero { margin-bottom: 4rem; }
+  .hero-eyebrow {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.65rem; letter-spacing: 0.25em;
+    text-transform: uppercase; color: var(--sage);
+    margin-bottom: 1.5rem;
+    display: flex; align-items: center; gap: 1rem;
+  }
+  .hero-eyebrow::before {
+    content: ''; display: inline-block;
+    width: 2rem; height: 1px; background: var(--sage-light);
+  }
+  .hero h1 {
+    font-family: 'Shippori Mincho', serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800; line-height: 1.2;
+    color: var(--ink); margin-bottom: 1rem;
+  }
+  .hero p {
+    font-size: 0.95rem; color: var(--muted);
+    max-width: 540px; line-height: 2;
+  }
+
+  /* FORM */
+  .form-card {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  .form-section-title {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.62rem; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--muted);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
+  .form-group.full { grid-column: 1 / -1; }
+  label {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.6rem; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--sage-dark);
+  }
+  input, select, textarea {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    color: var(--ink);
+    padding: 0.75rem 1rem;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.9rem; font-weight: 300;
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+    -webkit-appearance: none;
+  }
+  input:focus, select:focus, textarea:focus { border-color: var(--sage); }
+  textarea { resize: vertical; min-height: 80px; }
+
+  /* TAG INPUT */
+  .tag-input-wrapper {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    padding: 0.5rem;
+    display: flex; flex-wrap: wrap; gap: 0.4rem;
+    align-items: center; min-height: 48px;
+    transition: border-color 0.2s;
+  }
+  .tag-input-wrapper:focus-within { border-color: var(--sage); }
+  .tag {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    background: rgba(122,158,142,0.1);
+    border: 1px solid var(--sage-light);
+    color: var(--sage-dark);
+    font-size: 0.75rem; padding: 0.25rem 0.7rem;
+    font-family: 'Josefin Sans', sans-serif;
+    letter-spacing: 0.05em;
+  }
+  .tag-remove {
+    cursor: pointer; background: none; border: none;
+    color: var(--sage); font-size: 0.7rem; padding: 0;
+    line-height: 1;
+  }
+  .tag-remove:hover { color: var(--ink); }
+  .tag-input {
+    background: none; border: none; color: var(--ink);
+    font-size: 0.88rem; outline: none; flex: 1;
+    min-width: 120px; padding: 0.25rem;
+    font-family: 'Noto Sans JP', sans-serif; font-weight: 300;
+  }
+  .tag-hint {
+    font-size: 0.62rem; color: var(--muted);
+    margin-top: 0.3rem;
+    font-family: 'Josefin Sans', sans-serif; letter-spacing: 0.08em;
+  }
+
+  /* BUTTON */
+  .btn-generate {
+    width: 100%;
+    background: var(--sage-dark);
+    color: var(--warm-white);
+    border: none; cursor: pointer;
+    padding: 1.1rem;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.75rem; letter-spacing: 0.2em;
+    text-transform: uppercase;
+    transition: background 0.2s;
+    display: flex; align-items: center; justify-content: center; gap: 0.8rem;
+  }
+  .btn-generate:hover:not(:disabled) { background: var(--sage); }
+  .btn-generate:disabled { opacity: 0.5; cursor: not-allowed; }
+
+  /* LOADING */
+  .loading { display: none; text-align: center; padding: 3rem; }
+  .loading.active { display: block; }
+  .loading-dots { display: flex; justify-content: center; gap: 0.5rem; margin-bottom: 1rem; }
+  .loading-dots span {
+    width: 6px; height: 6px;
+    background: var(--sage); border-radius: 50%;
+    animation: bounce 1.2s infinite;
+  }
+  .loading-dots span:nth-child(2) { animation-delay: 0.2s; }
+  .loading-dots span:nth-child(3) { animation-delay: 0.4s; }
+  @keyframes bounce {
+    0%, 80%, 100% { transform: scale(0.6); opacity: 0.4; }
+    40% { transform: scale(1); opacity: 1; }
+  }
+  .loading p {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.68rem; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--muted);
+  }
+
+  /* RESULT */
+  .result { display: none; }
+  .result.active { display: block; }
+
+  /* PERSONA CARD */
+  .persona-card {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    margin-bottom: 1.5rem;
+    animation: fadeUp 0.6s ease;
+    overflow: hidden;
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .persona-header {
+    background: var(--cream);
+    padding: 1.8rem 2.5rem;
+    display: flex; align-items: center; gap: 1.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .persona-avatar {
+    width: 56px; height: 56px; border-radius: 50%;
+    background: var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.6rem; flex-shrink: 0;
+    border: 1px solid var(--border);
+  }
+  .persona-name {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 1.25rem; font-weight: 600;
+    color: var(--ink); margin-bottom: 0.2rem;
+  }
+  .persona-meta {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.62rem; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--sage-dark);
+  }
+
+  .persona-body { padding: 2rem 2.5rem; }
+  .persona-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 2rem; margin-bottom: 2rem;
+  }
+  .persona-section-title {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.58rem; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--muted);
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .persona-text { font-size: 0.9rem; line-height: 2; color: #4a4540; }
+  .persona-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .persona-tag {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.6rem; letter-spacing: 0.08em;
+    padding: 0.3rem 0.7rem;
+    border: 1px solid var(--border);
+    color: var(--muted);
+  }
+  .persona-tag.negative {
+    border-color: rgba(180,80,80,0.25);
+    color: #a07070;
+  }
+
+  .feedback-section {
+    margin-top: 1.5rem; padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+  }
+  .feedback-label {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.58rem; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--gold);
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .feedback-box {
+    background: var(--cream);
+    border-left: 2px solid var(--gold);
+    padding: 1.2rem 1.5rem;
+    font-size: 0.9rem; line-height: 2;
+    color: #4a4540; white-space: pre-wrap;
+  }
+
+  /* INSIGHTS */
+  .insights-card {
+    background: var(--dark-bg);
+    padding: 2.5rem;
+    margin-bottom: 1.5rem;
+    animation: fadeUp 0.6s ease 0.3s both;
+  }
+  .insights-title {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.6rem; letter-spacing: 0.25em;
+    text-transform: uppercase; color: var(--gold);
+    margin-bottom: 1rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .insights-box {
+    font-size: 0.95rem; line-height: 2;
+    color: rgba(255,255,255,0.75);
+    white-space: pre-wrap;
+  }
+  .action-row {
+    display: flex; gap: 1rem; margin-top: 1.5rem;
+  }
+  .btn-action {
+    flex: 1; background: none;
+    border: 1px solid rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.5);
+    padding: 0.8rem;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.65rem; letter-spacing: 0.15em;
+    text-transform: uppercase; cursor: pointer;
+    transition: all 0.2s;
+  }
+  .btn-action:hover { border-color: var(--sage-light); color: var(--sage-light); }
+
+  /* ERROR */
+  .error-box {
+    display: none;
+    background: rgba(180,80,80,0.08);
+    border: 1px solid rgba(180,80,80,0.25);
+    padding: 0.8rem 1.2rem;
+    color: #a07070; font-size: 0.85rem;
+    margin-top: 1rem;
+  }
+  .error-box.active { display: block; }
+
+  /* FOOTER */
+  footer {
+    text-align: center; padding: 2rem;
+    border-top: 1px solid var(--border);
+    margin-top: 2rem;
+  }
+  footer p {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.6rem; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--muted);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 700px) {
+    header { padding: 1rem 1.5rem; }
+    main { padding: 3rem 1rem 3rem; }
+    .form-grid { grid-template-columns: 1fr; }
+    .persona-grid { grid-template-columns: 1fr; }
+    .persona-header { flex-direction: column; text-align: center; gap: 1rem; }
+    .persona-body { padding: 1.5rem; }
+    .insights-card { padding: 1.5rem; }
+    .action-row { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <div class="logo">AI Persona Generator</div>
+    <div class="header-sub">仮想ペルソナ生成ツール</div>
+  </div>
+  <a href="file:///C:/Users/yuuad/Downloads/index.html" class="back-link">← Portfolio</a>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="hero-eyebrow">Product Research Tool</div>
+    <h1>AIが仮想ペルソナを<br>生成・検証する</h1>
+    <p>プロダクト情報を入力すると、AIがリアルなユーザーペルソナを生成し、そのペルソナ視点でプロダクトへのフィードバックを提供します。</p>
+  </div>
+
+  <div class="form-card">
+    <div class="form-section-title">プロダクト情報</div>
+    <div class="form-grid">
+      <div class="form-group">
+        <label>プロダクト名</label>
+        <input type="text" id="productName" placeholder="例：ドラッグストアの公式アプリ">
+      </div>
+      <div class="form-group">
+        <label>プロダクトカテゴリ</label>
+        <select id="productCategory">
+          <option value="">選択してください</option>
+          <option value="スマホアプリ（小売・EC）">スマホアプリ（小売・EC）</option>
+          <option value="スマホアプリ（ヘルスケア）">スマホアプリ（ヘルスケア）</option>
+          <option value="スマホアプリ（エンタメ）">スマホアプリ（エンタメ）</option>
+          <option value="スマホアプリ（業務効率化）">スマホアプリ（業務効率化）</option>
+          <option value="Webサービス">Webサービス</option>
+          <option value="社内システム">社内システム</option>
+          <option value="その他">その他</option>
+        </select>
+      </div>
+      <div class="form-group full">
+        <label>プロダクトの概要</label>
+        <textarea id="productDesc" placeholder="例：ポイントカード・クーポン・健康情報を管理できるスマホアプリ。"></textarea>
+      </div>
+      <div class="form-group full">
+        <label>想定ターゲットユーザー</label>
+        <textarea id="targetUser" placeholder="例：30〜50代の女性。日常的に買い物をしており、ポイントやクーポンをよく利用する。"></textarea>
+      </div>
+      <div class="form-group full">
+        <label>検証したい課題・仮説（任意）</label>
+        <div class="tag-input-wrapper" id="hypothesisWrapper">
+          <input type="text" class="tag-input" id="hypothesisInput" placeholder="入力してEnterで追加">
+        </div>
+        <div class="tag-hint">例：「新機能の認知率が低い」「ログイン離脱が多い」など複数入力可</div>
+      </div>
+      <div class="form-group">
+        <label>ペルソナ数</label>
+        <select id="personaCount">
+          <option value="1">1人</option>
+          <option value="2">2人</option>
+          <option value="3" selected="">3人</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>フィードバックの観点</label>
+        <select id="feedbackType">
+          <option value="UX全般">UX全般</option>
+          <option value="新機能への反応">新機能への反応</option>
+          <option value="継続利用の動機">継続利用の動機</option>
+          <option value="離脱・不満ポイント">離脱・不満ポイント</option>
+          <option value="競合との比較">競合との比較</option>
+        </select>
+      </div>
+    </div>
+    <button class="btn-generate" id="generateBtn" onclick="generatePersonas()">
+      ペルソナを生成する →
+    </button>
+    <div class="error-box" id="errorBox"></div>
+  </div>
+
+  <div class="loading" id="loading">
+    <div class="loading-dots"><span></span><span></span><span></span></div>
+    <p>ペルソナを生成中...</p>
+  </div>
+
+  <div class="result" id="result"></div>
+</main>
+
+<footer>
+  <p>AI Persona Generator — Powered by Claude</p>
+</footer>
+
+<script>
+const hypothesisInput = document.getElementById('hypothesisInput');
+let hypotheses = [];
+
+hypothesisInput.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter' && hypothesisInput.value.trim()) {
+    e.preventDefault();
+    addTag(hypothesisInput.value.trim());
+    hypothesisInput.value = '';
+  }
+});
+
+function addTag(text) {
+  hypotheses.push(text);
+  const tag = document.createElement('div');
+  tag.className = 'tag';
+  tag.dataset.value = text;
+  tag.innerHTML = `${text}<button class="tag-remove" onclick="removeTag(this)">✕</button>`;
+  document.getElementById('hypothesisWrapper').insertBefore(tag, hypothesisInput);
+}
+
+function removeTag(btn) {
+  const tag = btn.parentElement;
+  hypotheses = hypotheses.filter(h => h !== tag.dataset.value);
+  tag.remove();
+}
+
+async function generatePersonas() {
+  const productName = document.getElementById('productName').value.trim();
+  const productCategory = document.getElementById('productCategory').value;
+  const productDesc = document.getElementById('productDesc').value.trim();
+  const targetUser = document.getElementById('targetUser').value.trim();
+  const personaCount = document.getElementById('personaCount').value;
+  const feedbackType = document.getElementById('feedbackType').value;
+  const errorBox = document.getElementById('errorBox');
+
+  if (!productName || !productDesc || !targetUser) {
+    errorBox.textContent = 'プロダクト名・概要・ターゲットユーザーは必須です。';
+    errorBox.classList.add('active');
+    return;
+  }
+  errorBox.classList.remove('active');
+
+  document.getElementById('generateBtn').disabled = true;
+  document.getElementById('loading').classList.add('active');
+  document.getElementById('result').classList.remove('active');
+  document.getElementById('result').innerHTML = '';
+
+  const hypothesisText = hypotheses.length > 0
+    ? `\n検証したい課題・仮説:\n${hypotheses.map(h => `- ${h}`).join('\n')}`
+    : '';
+
+  const prompt = `あなたはプロダクトマネジメントの専門家です。以下のプロダクト情報をもとに、リアルな仮想ユーザーペルソナを${personaCount}人生成し、各ペルソナからの「${feedbackType}」に関するフィードバックを提供してください。
+
+【プロダクト情報】
+プロダクト名: ${productName}
+カテゴリ: ${productCategory}
+概要: ${productDesc}
+ターゲットユーザー: ${targetUser}${hypothesisText}
+
+以下のJSON形式のみで出力してください。マークダウンのコードブロックは使わないでください:
+
+{
+  "personas": [
+    {
+      "emoji": "絵文字1文字",
+      "name": "氏名（日本人名）",
+      "age": 年齢（数字）,
+      "occupation": "職業",
+      "location": "居住地",
+      "summary": "このペルソナの特徴を2〜3文で",
+      "goals": ["目標1", "目標2", "目標3"],
+      "frustrations": ["不満1", "不満2", "不満3"],
+      "techLevel": "ITリテラシー（低・中・高）",
+      "usageFrequency": "想定利用頻度",
+      "feedback": "${feedbackType}の観点からの詳細なフィードバック（200〜300文字）"
+    }
+  ],
+  "insights": "全ペルソナを踏まえた総合インサイト（PdM向け、200文字程度）"
+}`;
+
+  try {
+    const response = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 3000,
+        messages: [{ role: 'user', content: prompt }]
+      })
+    });
+
+    const data = await response.json();
+    const text = data.content.map(i => i.text || '').join('');
+    const clean = text.replace(/```json|```/g, '').trim();
+    const parsed = JSON.parse(clean);
+    renderResult(parsed, feedbackType);
+  } catch (err) {
+    errorBox.textContent = '生成中にエラーが発生しました。もう一度お試しください。';
+    errorBox.classList.add('active');
+    console.error(err);
+  } finally {
+    document.getElementById('generateBtn').disabled = false;
+    document.getElementById('loading').classList.remove('active');
+  }
+}
+
+function renderResult(data, feedbackType) {
+  const result = document.getElementById('result');
+
+  const personasHTML = data.personas.map(p => `
+    <div class="persona-card">
+      <div class="persona-header">
+        <div class="persona-avatar">${p.emoji}</div>
+        <div>
+          <div class="persona-name">${p.name}</div>
+          <div class="persona-meta">${p.age}歳 · ${p.occupation} · ${p.location} · ITリテラシー ${p.techLevel}</div>
+        </div>
+      </div>
+      <div class="persona-body">
+        <div class="persona-grid">
+          <div>
+            <div class="persona-section-title">プロフィール</div>
+            <p class="persona-text">${p.summary}</p>
+            <p class="persona-text" style="margin-top:0.8rem; font-size:0.82rem; color:var(--muted);">利用頻度：${p.usageFrequency}</p>
+          </div>
+          <div>
+            <div class="persona-section-title">目標・ゴール</div>
+            <div class="persona-tags" style="margin-bottom:1rem;">
+              ${p.goals.map(g => `<div class="persona-tag">${g}</div>`).join('')}
+            </div>
+            <div class="persona-section-title">不満・フラストレーション</div>
+            <div class="persona-tags">
+              ${p.frustrations.map(f => `<div class="persona-tag negative">${f}</div>`).join('')}
+            </div>
+          </div>
+        </div>
+        <div class="feedback-section">
+          <div class="feedback-label">${feedbackType}のフィードバック</div>
+          <div class="feedback-box">${p.feedback}</div>
+        </div>
+      </div>
+    </div>
+  `).join('');
+
+  result.innerHTML = `
+    ${personasHTML}
+    <div class="insights-card">
+      <div class="insights-title">総合インサイト（PdM向け）</div>
+      <div class="insights-box">${data.insights}</div>
+      <div class="action-row">
+        <button class="btn-action" onclick="copyText(\`${data.insights.replace(/`/g, '\\`')}\`)">インサイトをコピー</button>
+        <button class="btn-action" onclick="resetForm()">新しく生成する</button>
+      </div>
+    </div>
+  `;
+
+  result.classList.add('active');
+  result.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function copyText(text) {
+  navigator.clipboard.writeText(text).then(() => alert('コピーしました'));
+}
+
+function resetForm() {
+  document.getElementById('result').classList.remove('active');
+  document.getElementById('result').innerHTML = '';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+
+
+</body></html>

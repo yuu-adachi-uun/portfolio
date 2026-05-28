@@ -19,10 +19,8 @@
     --border: #e4dfd6;
     --dark-bg: #1e1d1b;
   }
-
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
-
   body {
     background: var(--cream);
     color: var(--ink);
@@ -31,8 +29,6 @@
     min-height: 100vh;
     line-height: 1.8;
   }
-
-  /* HEADER */
   header {
     position: sticky; top: 0; z-index: 100;
     padding: 1.2rem 3rem;
@@ -41,319 +37,77 @@
     border-bottom: 1px solid var(--border);
     display: flex; justify-content: space-between; align-items: center;
   }
-  .logo {
-    font-family: 'Shippori Mincho', serif;
-    font-weight: 800; font-size: 1rem;
-    letter-spacing: 0.05em; color: var(--ink);
-    text-decoration: none;
-  }
-  .header-sub {
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 0.65rem; letter-spacing: 0.2em;
-    text-transform: uppercase; color: var(--sage);
-  }
-  .back-link {
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 0.65rem; letter-spacing: 0.15em;
-    text-transform: uppercase; color: var(--muted);
-    text-decoration: none; transition: color 0.2s;
-  }
+  .logo { font-family: 'Shippori Mincho', serif; font-weight: 800; font-size: 1rem; letter-spacing: 0.05em; color: var(--ink); }
+  .header-sub { font-family: 'Josefin Sans', sans-serif; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sage); }
+  .back-link { font-family: 'Josefin Sans', sans-serif; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
   .back-link:hover { color: var(--sage-dark); }
-
-  /* MAIN */
   main { max-width: 900px; margin: 0 auto; padding: 5rem 2rem 4rem; }
-
-  /* HERO */
-  .hero { margin-bottom: 4rem; }
-  .hero-eyebrow {
+  .hero { margin-bottom: 3rem; }
+  .hero-eyebrow { font-family: 'Josefin Sans', sans-serif; font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--sage); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem; }
+  .hero-eyebrow::before { content: ''; display: inline-block; width: 2rem; height: 1px; background: var(--sage-light); }
+  .hero h1 { font-family: 'Shippori Mincho', serif; font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; line-height: 1.2; color: var(--ink); margin-bottom: 1rem; }
+  .hero p { font-size: 0.95rem; color: var(--muted); max-width: 540px; line-height: 2; }
+  .demo-badge {
+    display: inline-flex; align-items: center; gap: 0.5rem;
     font-family: 'Josefin Sans', sans-serif;
-    font-size: 0.65rem; letter-spacing: 0.25em;
-    text-transform: uppercase; color: var(--sage);
-    margin-bottom: 1.5rem;
-    display: flex; align-items: center; gap: 1rem;
+    font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--gold); border: 1px solid rgba(181,147,90,0.4);
+    padding: 0.3rem 0.8rem; margin-top: 1rem;
   }
-  .hero-eyebrow::before {
-    content: ''; display: inline-block;
-    width: 2rem; height: 1px; background: var(--sage-light);
-  }
-  .hero h1 {
-    font-family: 'Shippori Mincho', serif;
-    font-size: clamp(2rem, 5vw, 3rem);
-    font-weight: 800; line-height: 1.2;
-    color: var(--ink); margin-bottom: 1rem;
-  }
-  .hero p {
-    font-size: 0.95rem; color: var(--muted);
-    max-width: 540px; line-height: 2;
-  }
-
-  /* FORM */
-  .form-card {
-    background: var(--warm-white);
-    border: 1px solid var(--border);
-    padding: 2.5rem;
-    margin-bottom: 2rem;
-  }
-  .form-section-title {
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 0.62rem; letter-spacing: 0.22em;
-    text-transform: uppercase; color: var(--muted);
-    margin-bottom: 1.5rem;
-    padding-bottom: 0.8rem;
-    border-bottom: 1px solid var(--border);
-  }
-  .form-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-    margin-bottom: 1.5rem;
-  }
+  .form-card { background: var(--warm-white); border: 1px solid var(--border); padding: 2.5rem; margin-bottom: 2rem; }
+  .form-section-title { font-family: 'Josefin Sans', sans-serif; font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.5rem; padding-bottom: 0.8rem; border-bottom: 1px solid var(--border); }
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem; }
   .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
   .form-group.full { grid-column: 1 / -1; }
-  label {
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 0.6rem; letter-spacing: 0.2em;
-    text-transform: uppercase; color: var(--sage-dark);
-  }
-  input, select, textarea {
-    background: var(--cream);
-    border: 1px solid var(--border);
-    color: var(--ink);
-    padding: 0.75rem 1rem;
-    font-family: 'Noto Sans JP', sans-serif;
-    font-size: 0.9rem; font-weight: 300;
-    outline: none;
-    transition: border-color 0.2s;
-    width: 100%;
-    -webkit-appearance: none;
-  }
+  label { font-family: 'Josefin Sans', sans-serif; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sage-dark); }
+  input, select, textarea { background: var(--cream); border: 1px solid var(--border); color: var(--ink); padding: 0.75rem 1rem; font-family: 'Noto Sans JP', sans-serif; font-size: 0.9rem; font-weight: 300; outline: none; transition: border-color 0.2s; width: 100%; -webkit-appearance: none; }
   input:focus, select:focus, textarea:focus { border-color: var(--sage); }
   textarea { resize: vertical; min-height: 80px; }
-
-  /* TAG INPUT */
-  .tag-input-wrapper {
-    background: var(--cream);
-    border: 1px solid var(--border);
-    padding: 0.5rem;
-    display: flex; flex-wrap: wrap; gap: 0.4rem;
-    align-items: center; min-height: 48px;
-    transition: border-color 0.2s;
-  }
+  .tag-input-wrapper { background: var(--cream); border: 1px solid var(--border); padding: 0.5rem; display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; min-height: 48px; transition: border-color 0.2s; }
   .tag-input-wrapper:focus-within { border-color: var(--sage); }
-  .tag {
-    display: inline-flex; align-items: center; gap: 0.4rem;
-    background: rgba(122,158,142,0.1);
-    border: 1px solid var(--sage-light);
-    color: var(--sage-dark);
-    font-size: 0.75rem; padding: 0.25rem 0.7rem;
-    font-family: 'Josefin Sans', sans-serif;
-    letter-spacing: 0.05em;
-  }
-  .tag-remove {
-    cursor: pointer; background: none; border: none;
-    color: var(--sage); font-size: 0.7rem; padding: 0;
-    line-height: 1;
-  }
-  .tag-remove:hover { color: var(--ink); }
-  .tag-input {
-    background: none; border: none; color: var(--ink);
-    font-size: 0.88rem; outline: none; flex: 1;
-    min-width: 120px; padding: 0.25rem;
-    font-family: 'Noto Sans JP', sans-serif; font-weight: 300;
-  }
-  .tag-hint {
-    font-size: 0.62rem; color: var(--muted);
-    margin-top: 0.3rem;
-    font-family: 'Josefin Sans', sans-serif; letter-spacing: 0.08em;
-  }
-
-  /* BUTTON */
-  .btn-generate {
-    width: 100%;
-    background: var(--sage-dark);
-    color: var(--warm-white);
-    border: none; cursor: pointer;
-    padding: 1.1rem;
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 0.75rem; letter-spacing: 0.2em;
-    text-transform: uppercase;
-    transition: background 0.2s;
-    display: flex; align-items: center; justify-content: center; gap: 0.8rem;
-  }
-  .btn-generate:hover:not(:disabled) { background: var(--sage); }
-  .btn-generate:disabled { opacity: 0.5; cursor: not-allowed; }
-
-  /* LOADING */
+  .tag { display: inline-flex; align-items: center; gap: 0.4rem; background: rgba(122,158,142,0.1); border: 1px solid var(--sage-light); color: var(--sage-dark); font-size: 0.75rem; padding: 0.25rem 0.7rem; font-family: 'Josefin Sans', sans-serif; }
+  .tag-remove { cursor: pointer; background: none; border: none; color: var(--sage); font-size: 0.7rem; padding: 0; }
+  .tag-input { background: none; border: none; color: var(--ink); font-size: 0.88rem; outline: none; flex: 1; min-width: 120px; padding: 0.25rem; font-family: 'Noto Sans JP', sans-serif; font-weight: 300; }
+  .tag-hint { font-size: 0.62rem; color: var(--muted); margin-top: 0.3rem; font-family: 'Josefin Sans', sans-serif; letter-spacing: 0.08em; }
+  .btn-generate { width: 100%; background: var(--sage-dark); color: var(--warm-white); border: none; cursor: pointer; padding: 1.1rem; font-family: 'Josefin Sans', sans-serif; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; transition: background 0.2s; display: flex; align-items: center; justify-content: center; gap: 0.8rem; }
+  .btn-generate:hover { background: var(--sage); }
   .loading { display: none; text-align: center; padding: 3rem; }
   .loading.active { display: block; }
   .loading-dots { display: flex; justify-content: center; gap: 0.5rem; margin-bottom: 1rem; }
-  .loading-dots span {
-    width: 6px; height: 6px;
-    background: var(--sage); border-radius: 50%;
-    animation: bounce 1.2s infinite;
-  }
+  .loading-dots span { width: 6px; height: 6px; background: var(--sage); border-radius: 50%; animation: bounce 1.2s infinite; }
   .loading-dots span:nth-child(2) { animation-delay: 0.2s; }
   .loading-dots span:nth-child(3) { animation-delay: 0.4s; }
-  @keyframes bounce {
-    0%, 80%, 100% { transform: scale(0.6); opacity: 0.4; }
-    40% { transform: scale(1); opacity: 1; }
-  }
-  .loading p {
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 0.68rem; letter-spacing: 0.2em;
-    text-transform: uppercase; color: var(--muted);
-  }
-
-  /* RESULT */
+  @keyframes bounce { 0%, 80%, 100% { transform: scale(0.6); opacity: 0.4; } 40% { transform: scale(1); opacity: 1; } }
+  .loading p { font-family: 'Josefin Sans', sans-serif; font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
   .result { display: none; }
   .result.active { display: block; }
-
-  /* PERSONA CARD */
-  .persona-card {
-    background: var(--warm-white);
-    border: 1px solid var(--border);
-    margin-bottom: 1.5rem;
-    animation: fadeUp 0.6s ease;
-    overflow: hidden;
-  }
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(12px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  .persona-header {
-    background: var(--cream);
-    padding: 1.8rem 2.5rem;
-    display: flex; align-items: center; gap: 1.5rem;
-    border-bottom: 1px solid var(--border);
-  }
-  .persona-avatar {
-    width: 56px; height: 56px; border-radius: 50%;
-    background: var(--border);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.6rem; flex-shrink: 0;
-    border: 1px solid var(--border);
-  }
-  .persona-name {
-    font-family: 'Shippori Mincho', serif;
-    font-size: 1.25rem; font-weight: 600;
-    color: var(--ink); margin-bottom: 0.2rem;
-  }
-  .persona-meta {
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 0.62rem; letter-spacing: 0.15em;
-    text-transform: uppercase; color: var(--sage-dark);
-  }
-
+  .persona-card { background: var(--warm-white); border: 1px solid var(--border); margin-bottom: 1.5rem; animation: fadeUp 0.6s ease; overflow: hidden; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+  .persona-header { background: var(--cream); padding: 1.8rem 2.5rem; display: flex; align-items: center; gap: 1.5rem; border-bottom: 1px solid var(--border); }
+  .persona-avatar { width: 56px; height: 56px; border-radius: 50%; background: var(--border); display: flex; align-items: center; justify-content: center; font-size: 1.6rem; flex-shrink: 0; border: 1px solid var(--border); }
+  .persona-name { font-family: 'Shippori Mincho', serif; font-size: 1.25rem; font-weight: 600; color: var(--ink); margin-bottom: 0.2rem; }
+  .persona-meta { font-family: 'Josefin Sans', sans-serif; font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--sage-dark); }
   .persona-body { padding: 2rem 2.5rem; }
-  .persona-grid {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 2rem; margin-bottom: 2rem;
-  }
-  .persona-section-title {
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 0.58rem; letter-spacing: 0.22em;
-    text-transform: uppercase; color: var(--muted);
-    margin-bottom: 0.8rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid var(--border);
-  }
+  .persona-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem; }
+  .persona-section-title { font-family: 'Josefin Sans', sans-serif; font-size: 0.58rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.8rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
   .persona-text { font-size: 0.9rem; line-height: 2; color: #4a4540; }
   .persona-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-  .persona-tag {
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 0.6rem; letter-spacing: 0.08em;
-    padding: 0.3rem 0.7rem;
-    border: 1px solid var(--border);
-    color: var(--muted);
-  }
-  .persona-tag.negative {
-    border-color: rgba(180,80,80,0.25);
-    color: #a07070;
-  }
-
-  .feedback-section {
-    margin-top: 1.5rem; padding-top: 1.5rem;
-    border-top: 1px solid var(--border);
-  }
-  .feedback-label {
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 0.58rem; letter-spacing: 0.22em;
-    text-transform: uppercase; color: var(--gold);
-    margin-bottom: 0.8rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid var(--border);
-  }
-  .feedback-box {
-    background: var(--cream);
-    border-left: 2px solid var(--gold);
-    padding: 1.2rem 1.5rem;
-    font-size: 0.9rem; line-height: 2;
-    color: #4a4540; white-space: pre-wrap;
-  }
-
-  /* INSIGHTS */
-  .insights-card {
-    background: var(--dark-bg);
-    padding: 2.5rem;
-    margin-bottom: 1.5rem;
-    animation: fadeUp 0.6s ease 0.3s both;
-  }
-  .insights-title {
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 0.6rem; letter-spacing: 0.25em;
-    text-transform: uppercase; color: var(--gold);
-    margin-bottom: 1rem;
-    padding-bottom: 0.8rem;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-  }
-  .insights-box {
-    font-size: 0.95rem; line-height: 2;
-    color: rgba(255,255,255,0.75);
-    white-space: pre-wrap;
-  }
-  .action-row {
-    display: flex; gap: 1rem; margin-top: 1.5rem;
-  }
-  .btn-action {
-    flex: 1; background: none;
-    border: 1px solid rgba(255,255,255,0.15);
-    color: rgba(255,255,255,0.5);
-    padding: 0.8rem;
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 0.65rem; letter-spacing: 0.15em;
-    text-transform: uppercase; cursor: pointer;
-    transition: all 0.2s;
-  }
+  .persona-tag { font-family: 'Josefin Sans', sans-serif; font-size: 0.6rem; letter-spacing: 0.08em; padding: 0.3rem 0.7rem; border: 1px solid var(--border); color: var(--muted); }
+  .persona-tag.negative { border-color: rgba(180,80,80,0.25); color: #a07070; }
+  .feedback-section { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+  .feedback-label { font-family: 'Josefin Sans', sans-serif; font-size: 0.58rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+  .feedback-box { background: var(--cream); border-left: 2px solid var(--gold); padding: 1.2rem 1.5rem; font-size: 0.9rem; line-height: 2; color: #4a4540; }
+  .insights-card { background: var(--dark-bg); padding: 2.5rem; margin-bottom: 1.5rem; animation: fadeUp 0.6s ease 0.3s both; }
+  .insights-title { font-family: 'Josefin Sans', sans-serif; font-size: 0.6rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; padding-bottom: 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .insights-box { font-size: 0.95rem; line-height: 2; color: rgba(255,255,255,0.75); }
+  .action-row { display: flex; gap: 1rem; margin-top: 1.5rem; }
+  .btn-action { flex: 1; background: none; border: 1px solid rgba(255,255,255,0.15); color: rgba(255,255,255,0.5); padding: 0.8rem; font-family: 'Josefin Sans', sans-serif; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; cursor: pointer; transition: all 0.2s; }
   .btn-action:hover { border-color: var(--sage-light); color: var(--sage-light); }
-
-  /* ERROR */
-  .error-box {
-    display: none;
-    background: rgba(180,80,80,0.08);
-    border: 1px solid rgba(180,80,80,0.25);
-    padding: 0.8rem 1.2rem;
-    color: #a07070; font-size: 0.85rem;
-    margin-top: 1rem;
-  }
-  .error-box.active { display: block; }
-
-  /* FOOTER */
-  footer {
-    text-align: center; padding: 2rem;
-    border-top: 1px solid var(--border);
-    margin-top: 2rem;
-  }
-  footer p {
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 0.6rem; letter-spacing: 0.15em;
-    text-transform: uppercase; color: var(--muted);
-  }
-
-  /* RESPONSIVE */
+  footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+  footer p { font-family: 'Josefin Sans', sans-serif; font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); }
   @media (max-width: 700px) {
     header { padding: 1rem 1.5rem; }
-    main { padding: 3rem 1rem 3rem; }
+    main { padding: 3rem 1rem; }
     .form-grid { grid-template-columns: 1fr; }
     .persona-grid { grid-template-columns: 1fr; }
     .persona-header { flex-direction: column; text-align: center; gap: 1rem; }
@@ -378,6 +132,7 @@
     <div class="hero-eyebrow">Product Research Tool</div>
     <h1>AIが仮想ペルソナを<br>生成・検証する</h1>
     <p>プロダクト情報を入力すると、AIがリアルなユーザーペルソナを生成し、そのペルソナ視点でプロダクトへのフィードバックを提供します。</p>
+    <div class="demo-badge">UI Demo — サンプルデータで動作確認できます</div>
   </div>
 
   <div class="form-card">
@@ -434,10 +189,9 @@
         </select>
       </div>
     </div>
-    <button class="btn-generate" id="generateBtn" onclick="generatePersonas()">
+    <button class="btn-generate" onclick="generatePersonas()">
       ペルソナを生成する →
     </button>
-    <div class="error-box" id="errorBox"></div>
   </div>
 
   <div class="loading" id="loading">
@@ -453,174 +207,206 @@
 </footer>
 
 <script>
+// Tag input
 const hypothesisInput = document.getElementById('hypothesisInput');
 let hypotheses = [];
-
 hypothesisInput.addEventListener('keydown', (e) => {
   if (e.key === 'Enter' && hypothesisInput.value.trim()) {
     e.preventDefault();
-    addTag(hypothesisInput.value.trim());
+    const text = hypothesisInput.value.trim();
+    hypotheses.push(text);
+    const tag = document.createElement('div');
+    tag.className = 'tag';
+    tag.dataset.value = text;
+    tag.innerHTML = `${text}<button class="tag-remove" onclick="this.parentElement.remove(); hypotheses = hypotheses.filter(h=>h!=='${text}')">✕</button>`;
+    document.getElementById('hypothesisWrapper').insertBefore(tag, hypothesisInput);
     hypothesisInput.value = '';
   }
 });
 
-function addTag(text) {
-  hypotheses.push(text);
-  const tag = document.createElement('div');
-  tag.className = 'tag';
-  tag.dataset.value = text;
-  tag.innerHTML = `${text}<button class="tag-remove" onclick="removeTag(this)">✕</button>`;
-  document.getElementById('hypothesisWrapper').insertBefore(tag, hypothesisInput);
-}
-
-function removeTag(btn) {
-  const tag = btn.parentElement;
-  hypotheses = hypotheses.filter(h => h !== tag.dataset.value);
-  tag.remove();
-}
-
-async function generatePersonas() {
-  const productName = document.getElementById('productName').value.trim();
-  const productCategory = document.getElementById('productCategory').value;
-  const productDesc = document.getElementById('productDesc').value.trim();
-  const targetUser = document.getElementById('targetUser').value.trim();
-  const personaCount = document.getElementById('personaCount').value;
-  const feedbackType = document.getElementById('feedbackType').value;
-  const errorBox = document.getElementById('errorBox');
-
-  if (!productName || !productDesc || !targetUser) {
-    errorBox.textContent = 'プロダクト名・概要・ターゲットユーザーは必須です。';
-    errorBox.classList.add('active');
-    return;
+// Sample personas bank
+const personaBank = [
+  {
+    emoji: '👩',
+    name: '田中 美穂',
+    age: 44,
+    occupation: 'パート・主婦',
+    location: '愛知県名古屋市',
+    techLevel: '中',
+    usageFrequency: '週3〜4回',
+    summary: '家族4人分の日用品・食料品の購入を担う主婦。ポイントやクーポンへの関心が高く、買い物前にアプリを確認する習慣がある。スマホはLINEとネットショッピングが中心で、新機能への適応には時間がかかる傾向。',
+    goals: ['ポイントを効率よく貯めて家計の足しにしたい', 'クーポンを見逃さずに使いたい', '近くの店舗の混雑情報を知りたい'],
+    frustrations: ['クーポンの有効期限に気づかず失効することが多い', 'アプリの動作が重く感じることがある', 'ポイントの使い方がわかりにくい'],
+  },
+  {
+    emoji: '👴',
+    name: '鈴木 正雄',
+    age: 68,
+    occupation: '定年退職・無職',
+    location: '東京都世田谷区',
+    techLevel: '低',
+    usageFrequency: '週1〜2回',
+    summary: '健康管理に関心が高く、かかりつけ薬局として定期的に利用。家族にすすめられてアプリを導入したが、操作に自信がなく機能を十分活用できていない。シンプルな画面と大きな文字を好む。',
+    goals: ['お薬手帳をスマホで管理したい', '血圧・体重を記録して健康管理に役立てたい', 'ポイントカードを財布に入れなくて済むようにしたい'],
+    frustrations: ['文字が小さくて読みにくい', 'どこに何があるかわからない', 'ログインを求められるたびに操作がわからなくなる'],
+  },
+  {
+    emoji: '👩‍💼',
+    name: '佐藤 麻衣',
+    age: 31,
+    occupation: '会社員（営業職）',
+    location: '大阪府大阪市',
+    techLevel: '高',
+    usageFrequency: '週5回以上',
+    summary: '仕事帰りに立ち寄ることが多く、時短・効率重視。アプリへの習熟度は高く、新機能もすぐ試す。一方で期待値も高く、使いにくいと感じたらすぐに離脱する傾向がある。美容・健康情報への関心も高い。',
+    goals: ['レジでスムーズに決済・ポイント利用を完結させたい', '自分に合った商品をレコメンドしてほしい', '美容・健康に関する情報を手軽にキャッチしたい'],
+    frustrations: ['バーコード表示までのタップ数が多い', 'パーソナライズ感が薄い', 'アプリ内のコンテンツ更新が遅い'],
+  },
+  {
+    emoji: '🧑',
+    name: '中村 拓海',
+    age: 24,
+    occupation: '大学院生',
+    location: '福岡県福岡市',
+    techLevel: '高',
+    usageFrequency: '月2〜3回',
+    summary: '一人暮らしで日用品・食品を中心に購入。価格比較を重視しており、ポイント還元率の高いタイミングを狙う。アプリは使えるが積極的に探索するほどの動機はなく、必要な機能だけ使う傾向。',
+    goals: ['ポイント還元率が高い日を把握したい', '購入履歴から支出管理に活用したい', 'セール情報をプッシュ通知で受け取りたい'],
+    frustrations: ['通知が多すぎて無視するようになった', '価格比較がしにくい', 'ログインが面倒でゲスト利用が多い'],
+  },
+  {
+    emoji: '👩‍🦳',
+    name: '山本 久子',
+    age: 55,
+    occupation: '看護師（パート）',
+    location: '神奈川県横浜市',
+    techLevel: '中',
+    usageFrequency: '週2〜3回',
+    summary: '医療従事者として健康情報への関心が高く、家族の薬・サプリ管理にもアプリを活用したい意向。忙しい生活の中で効率を重視しており、使い勝手の良し悪しに敏感。',
+    goals: ['家族分の薬情報をまとめて管理したい', '健康診断の数値と連動した商品提案がほしい', 'ポイントを家族間でシェアしたい'],
+    frustrations: ['家族カードの管理が煩雑', '健康系コンテンツとショッピングが混在していてわかりにくい', '専門的な情報が少ない'],
   }
-  errorBox.classList.remove('active');
+];
 
-  document.getElementById('generateBtn').disabled = true;
+const insightBank = [
+  'ライトユーザーと헤비ユーザーでニーズが大きく異なる。ライトユーザーには「バーコード表示の最短化」、ヘビーユーザーには「パーソナライズ強化」が優先課題。シニア層のオンボーディング設計も改善余地が大きい。',
+  'クーポン・ポイント機能への期待は全ペルソナ共通だが、「気づかず失効する」という課題は習熟度に関わらず発生している。プッシュ通知の最適化と失効前アラートの設計が最重要施策と考えられる。',
+  'スマホリテラシーの高低で求める体験が二極化している。高リテラシー層はパーソナライズ・スピード重視、低リテラシー層はシンプルさ・安心感を重視。共通UIで両者を満足させるには情報の階層化が鍵となる。',
+];
+
+function generatePersonas() {
+  const productName = document.getElementById('productName').value.trim() || 'サンプルプロダクト';
+  const feedbackType = document.getElementById('feedbackType').value;
+  const count = parseInt(document.getElementById('personaCount').value);
+
+  // Show loading
   document.getElementById('loading').classList.add('active');
   document.getElementById('result').classList.remove('active');
   document.getElementById('result').innerHTML = '';
 
-  const hypothesisText = hypotheses.length > 0
-    ? `\n検証したい課題・仮説:\n${hypotheses.map(h => `- ${h}`).join('\n')}`
-    : '';
-
-  const prompt = `あなたはプロダクトマネジメントの専門家です。以下のプロダクト情報をもとに、リアルな仮想ユーザーペルソナを${personaCount}人生成し、各ペルソナからの「${feedbackType}」に関するフィードバックを提供してください。
-
-【プロダクト情報】
-プロダクト名: ${productName}
-カテゴリ: ${productCategory}
-概要: ${productDesc}
-ターゲットユーザー: ${targetUser}${hypothesisText}
-
-以下のJSON形式のみで出力してください。マークダウンのコードブロックは使わないでください:
-
-{
-  "personas": [
-    {
-      "emoji": "絵文字1文字",
-      "name": "氏名（日本人名）",
-      "age": 年齢（数字）,
-      "occupation": "職業",
-      "location": "居住地",
-      "summary": "このペルソナの特徴を2〜3文で",
-      "goals": ["目標1", "目標2", "目標3"],
-      "frustrations": ["不満1", "不満2", "不満3"],
-      "techLevel": "ITリテラシー（低・中・高）",
-      "usageFrequency": "想定利用頻度",
-      "feedback": "${feedbackType}の観点からの詳細なフィードバック（200〜300文字）"
-    }
-  ],
-  "insights": "全ペルソナを踏まえた総合インサイト（PdM向け、200文字程度）"
-}`;
-
-  try {
-    const response = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
-        max_tokens: 3000,
-        messages: [{ role: 'user', content: prompt }]
-      })
-    });
-
-    const data = await response.json();
-    const text = data.content.map(i => i.text || '').join('');
-    const clean = text.replace(/```json|```/g, '').trim();
-    const parsed = JSON.parse(clean);
-    renderResult(parsed, feedbackType);
-  } catch (err) {
-    errorBox.textContent = '生成中にエラーが発生しました。もう一度お試しください。';
-    errorBox.classList.add('active');
-    console.error(err);
-  } finally {
-    document.getElementById('generateBtn').disabled = false;
+  setTimeout(() => {
     document.getElementById('loading').classList.remove('active');
-  }
-}
 
-function renderResult(data, feedbackType) {
-  const result = document.getElementById('result');
+    // Pick personas
+    const shuffled = [...personaBank].sort(() => Math.random() - 0.5);
+    const selected = shuffled.slice(0, count);
 
-  const personasHTML = data.personas.map(p => `
-    <div class="persona-card">
-      <div class="persona-header">
-        <div class="persona-avatar">${p.emoji}</div>
-        <div>
-          <div class="persona-name">${p.name}</div>
-          <div class="persona-meta">${p.age}歳 · ${p.occupation} · ${p.location} · ITリテラシー ${p.techLevel}</div>
-        </div>
-      </div>
-      <div class="persona-body">
-        <div class="persona-grid">
-          <div>
-            <div class="persona-section-title">プロフィール</div>
-            <p class="persona-text">${p.summary}</p>
-            <p class="persona-text" style="margin-top:0.8rem; font-size:0.82rem; color:var(--muted);">利用頻度：${p.usageFrequency}</p>
-          </div>
-          <div>
-            <div class="persona-section-title">目標・ゴール</div>
-            <div class="persona-tags" style="margin-bottom:1rem;">
-              ${p.goals.map(g => `<div class="persona-tag">${g}</div>`).join('')}
+    // Generate feedback based on feedbackType
+    const feedbacks = {
+      'UX全般': [
+        `${productName}のUXは全体的に整理されていると感じますが、よく使う機能へのアクセスが深い階層にあることが気になります。トップ画面にポイント残高とクーポン一覧を並べてほしいです。`,
+        `初めて使ったときに何ができるアプリなのかがすぐに把握できませんでした。オンボーディングの改善と、メイン機能の導線をシンプルにしてもらえると助かります。`,
+        `全体的には使いやすいと思います。ただ、ログアウト状態からの復帰時に毎回ログインを求められるのが手間です。生体認証に対応してほしいです。`,
+        `デザインは綺麗ですが、情報量が多くてどこを見ればいいかわかりにくい場面があります。自分がよく使う機能だけ表示できるカスタマイズ機能があると嬉しい。`,
+        `アプリの動作速度は概ね問題ないですが、クーポン一覧の読み込みが遅いことがあります。オフラインでも基本機能が使えるようになるといいと思います。`,
+      ],
+      '新機能への反応': [
+        `新機能の存在自体に気づいていませんでした。アップデート後に「こんな機能が追加されました」というお知らせがあると試してみようと思えます。`,
+        `新機能のアイコンがわかりにくく、最初は何のボタンかわかりませんでした。機能名をテキストで表示してもらえると助かります。`,
+        `通知で新機能を知りましたが、説明が短くてイメージがつかめませんでした。使い方のショート動画があると理解しやすいと思います。`,
+        `新機能は興味深かったですが、既存の機能との使い分けがわからず結局使わなくなりました。既存機能との関係性を説明してほしいです。`,
+        `新機能を試しましたが、自分の使い方には合わなかったです。ただ、設定でオフにできるのは良かった。`,
+      ],
+      '継続利用の動機': [
+        `ポイントが貯まっていることが一番の継続理由です。残高が増えるのを見るのが楽しい。もっとポイントの使い道が増えると嬉しいです。`,
+        `クーポンが充実しているので使い続けています。ただ、自分に関係ないクーポンが多く表示されるので、もっと絞り込めるといいです。`,
+        `家族みんなで使っているので辞める選択肢がない。家族アカウントの管理がもっと楽になるといいと思います。`,
+        `購入履歴が見られるのが便利で続けています。家計管理に使っているので、カテゴリ別の集計機能があるとさらに良いです。`,
+        `健康情報のコンテンツが参考になるので使い続けています。もっと専門性の高い情報が増えると嬉しいです。`,
+      ],
+      '離脱・不満ポイント': [
+        `クーポンの有効期限が短すぎて使いきれないことが多いです。気づいたら期限切れになっていることが何度もありました。`,
+        `プッシュ通知が多すぎて全部オフにしてしまいました。重要な通知だけに絞ってほしいです。`,
+        `アプリを開いてからバーコードを表示するまでに時間がかかります。レジで待たせてしまうのが申し訳なくて、最近はカードを使っています。`,
+        `ログインが頻繁に切れるのがストレスです。セキュリティは大切ですが、もう少し長く維持してほしいです。`,
+        `欲しい情報を探すのに時間がかかります。検索機能があるのに精度が低く、結果が出てこないことも多いです。`,
+      ],
+      '競合との比較': [
+        `他社のアプリと比べてポイント還元率が低い印象です。還元率アップのキャンペーンをもっと頻繁にやってほしいです。`,
+        `他社アプリはホーム画面で残高・クーポン・お知らせが一目でわかります。このアプリは少し情報が散らばっている感じがします。`,
+        `競合他社のアプリはレコメンド精度が高く、買いたいものが自然に出てきます。このアプリのレコメンドはまだ改善の余地があると感じます。`,
+        `他のアプリと比べてデザインは好きです。ただ、機能の充実度では少し劣る部分があるかなと思います。`,
+        `競合と比べてアプリの動作が安定しているのは良い点です。フリーズやクラッシュが少ないので安心して使えます。`,
+      ],
+    };
+
+    const feedbackList = feedbacks[feedbackType] || feedbacks['UX全般'];
+
+    const personasHTML = selected.map((p, i) => {
+      const feedback = feedbackList[i % feedbackList.length];
+      return `
+        <div class="persona-card">
+          <div class="persona-header">
+            <div class="persona-avatar">${p.emoji}</div>
+            <div>
+              <div class="persona-name">${p.name}</div>
+              <div class="persona-meta">${p.age}歳 · ${p.occupation} · ${p.location} · ITリテラシー ${p.techLevel}</div>
             </div>
-            <div class="persona-section-title">不満・フラストレーション</div>
-            <div class="persona-tags">
-              ${p.frustrations.map(f => `<div class="persona-tag negative">${f}</div>`).join('')}
+          </div>
+          <div class="persona-body">
+            <div class="persona-grid">
+              <div>
+                <div class="persona-section-title">プロフィール</div>
+                <p class="persona-text">${p.summary}</p>
+                <p class="persona-text" style="margin-top:0.8rem; font-size:0.82rem; color:var(--muted);">利用頻度：${p.usageFrequency}</p>
+              </div>
+              <div>
+                <div class="persona-section-title">目標・ゴール</div>
+                <div class="persona-tags" style="margin-bottom:1rem;">
+                  ${p.goals.map(g => `<div class="persona-tag">${g}</div>`).join('')}
+                </div>
+                <div class="persona-section-title">不満・フラストレーション</div>
+                <div class="persona-tags">
+                  ${p.frustrations.map(f => `<div class="persona-tag negative">${f}</div>`).join('')}
+                </div>
+              </div>
+            </div>
+            <div class="feedback-section">
+              <div class="feedback-label">${feedbackType}のフィードバック</div>
+              <div class="feedback-box">${feedback}</div>
             </div>
           </div>
         </div>
-        <div class="feedback-section">
-          <div class="feedback-label">${feedbackType}のフィードバック</div>
-          <div class="feedback-box">${p.feedback}</div>
+      `;
+    }).join('');
+
+    const insight = insightBank[Math.floor(Math.random() * insightBank.length)];
+
+    const result = document.getElementById('result');
+    result.innerHTML = `
+      ${personasHTML}
+      <div class="insights-card">
+        <div class="insights-title">総合インサイト（PdM向け）</div>
+        <div class="insights-box">${insight}</div>
+        <div class="action-row">
+          <button class="btn-action" onclick="navigator.clipboard.writeText(\`${insight.replace(/`/g, '\\`')}\`).then(()=>alert('コピーしました'))">インサイトをコピー</button>
+          <button class="btn-action" onclick="document.getElementById('result').classList.remove('active'); document.getElementById('result').innerHTML=''; window.scrollTo({top:0,behavior:'smooth'})">新しく生成する</button>
         </div>
       </div>
-    </div>
-  `).join('');
-
-  result.innerHTML = `
-    ${personasHTML}
-    <div class="insights-card">
-      <div class="insights-title">総合インサイト（PdM向け）</div>
-      <div class="insights-box">${data.insights}</div>
-      <div class="action-row">
-        <button class="btn-action" onclick="copyText(\`${data.insights.replace(/`/g, '\\`')}\`)">インサイトをコピー</button>
-        <button class="btn-action" onclick="resetForm()">新しく生成する</button>
-      </div>
-    </div>
-  `;
-
-  result.classList.add('active');
-  result.scrollIntoView({ behavior: 'smooth', block: 'start' });
-}
-
-function copyText(text) {
-  navigator.clipboard.writeText(text).then(() => alert('コピーしました'));
-}
-
-function resetForm() {
-  document.getElementById('result').classList.remove('active');
-  document.getElementById('result').innerHTML = '';
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+    `;
+    result.classList.add('active');
+    result.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 2000);
 }
 </script>
 </body>

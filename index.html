@@ -112,8 +112,14 @@
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 300; font-size: 0.85rem;
     letter-spacing: 0.35em; color: var(--muted);
-    margin-bottom: 2.8rem;
+    margin-bottom: 1rem;
     text-transform: uppercase;
+  }
+  .hero-title-jp {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 0.95rem; color: var(--sage-dark);
+    margin-bottom: 2.8rem;
+    letter-spacing: 0.02em;
   }
   .hero-desc {
     font-size: 1rem; line-height: 2;
@@ -237,20 +243,18 @@
   .exp-company { font-family: 'Shippori Mincho', serif; font-weight: 600; font-size: 1.25rem; margin-bottom: 0.3rem; color: var(--ink); }
   .exp-role { font-family: 'Josefin Sans', sans-serif; font-size: 0.68rem; letter-spacing: 0.15em; color: var(--sage-dark); text-transform: uppercase; margin-bottom: 1rem; }
   .exp-desc { font-size: 0.93rem; line-height: 2; color: #4a4540; }
+  .exp-desc br { display: block; content: ''; margin-top: 0.8rem; }
   .exp-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1.2rem; }
   .exp-tag { font-family: 'Josefin Sans', sans-serif; font-size: 0.62rem; letter-spacing: 0.1em; padding: 0.3rem 0.8rem; border: 1px solid var(--sage-light); color: var(--sage-dark); text-transform: uppercase; background: rgba(122,158,142,0.06); }
-  #media { background: var(--dark-bg); }
-  #media .section-title { color: var(--warm-white); }
-  #media .section-eyebrow { color: var(--sage-light); }
-  #media .section-line { background: rgba(255,255,255,0.08); }
-  .media-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(255,255,255,0.06); }
-  .media-card { background: var(--dark-surface); padding: 2.5rem 2rem; text-decoration: none; display: block; transition: background 0.25s; position: relative; overflow: hidden; }
+  #media { background: var(--cream); }
+  .media-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .media-card { background: var(--warm-white); border: 1px solid var(--border); padding: 2.5rem 2rem; text-decoration: none; display: block; transition: border-color 0.25s, transform 0.2s; position: relative; overflow: hidden; }
   .media-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--sage); transform: scaleX(0); transform-origin: left; transition: transform 0.3s ease; }
-  .media-card:hover { background: rgba(122,158,142,0.08); }
+  .media-card:hover { border-color: var(--sage-light); transform: translateY(-4px); }
   .media-card:hover::before { transform: scaleX(1); }
-  .media-source { font-family: 'Josefin Sans', sans-serif; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sage-light); margin-bottom: 1.2rem; }
-  .media-title { font-family: 'Shippori Mincho', serif; font-size: 1rem; line-height: 1.7; color: rgba(255,255,255,0.85); margin-bottom: 1.5rem; }
-  .media-arrow { font-family: 'Josefin Sans', sans-serif; font-size: 0.65rem; letter-spacing: 0.15em; color: var(--sage); text-transform: uppercase; transition: letter-spacing 0.2s; }
+  .media-source { font-family: 'Josefin Sans', sans-serif; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sage); margin-bottom: 1.2rem; }
+  .media-title { font-family: 'Shippori Mincho', serif; font-size: 1rem; line-height: 1.7; color: var(--ink); margin-bottom: 1.5rem; }
+  .media-arrow { font-family: 'Josefin Sans', sans-serif; font-size: 0.65rem; letter-spacing: 0.15em; color: var(--sage-dark); text-transform: uppercase; transition: letter-spacing 0.2s; }
   .media-card:hover .media-arrow { letter-spacing: 0.25em; }
   #contact { background: var(--warm-white); text-align: center; }
   .contact-inner { max-width: 560px; margin: 0 auto; }
@@ -307,6 +311,25 @@
     text-transform: uppercase; color: var(--muted);
     margin-top: 1.5rem;
   }
+
+  /* ── SKILLS ── */
+  .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+  .skill-card {
+    padding: 1.5rem;
+    border: 1px solid var(--border);
+    background: var(--cream);
+    font-size: 0.92rem;
+    color: var(--ink);
+    display: flex; align-items: center; gap: 0.8rem;
+    transition: border-color 0.2s;
+  }
+  .skill-card::before {
+    content: ''; display: inline-block;
+    width: 5px; height: 5px;
+    background: var(--sage); border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .skill-card:hover { border-color: var(--sage-light); }
 
   /* ── HOBBY (slim) ── */
   .hobby-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
@@ -497,6 +520,7 @@
 
     /* WORKS */
     .hobby-grid { grid-template-columns: 1fr; }
+    .skills-grid { grid-template-columns: 1fr; }
     .works-grid { grid-template-columns: 1fr; gap: 1rem; }
     .slider-item { flex: 0 0 85%; }
 
@@ -538,9 +562,9 @@
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#experience">Experience</a></li>
-      <li><a href="#works">Works</a></li>
-      <li><a href="#blog">Blog</a></li>
+      <li><a href="#skills">Expertise</a></li>
       <li><a href="#media">Media</a></li>
+      <li><a href="#blog">Blog</a></li>
       <li><a href="#hobby">Hobby</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -563,9 +587,9 @@
   <button class="mobile-menu-close" onclick="toggleMenu()">✕ Close</button>
   <a href="#about" onclick="toggleMenu()">About</a>
   <a href="#experience" onclick="toggleMenu()">Experience</a>
-  <a href="#works" onclick="toggleMenu()">Works</a>
-  <a href="#blog" onclick="toggleMenu()">Blog</a>
+  <a href="#skills" onclick="toggleMenu()">Expertise</a>
   <a href="#media" onclick="toggleMenu()">Media</a>
+  <a href="#blog" onclick="toggleMenu()">Blog</a>
   <a href="#hobby" onclick="toggleMenu()">Hobby</a>
   <a href="#contact" onclick="toggleMenu()">Contact</a>
   <div class="mobile-social">
@@ -580,13 +604,14 @@
 
 <section id="hero">
   <div class="hero-left">
-    <p class="hero-eyebrow">Freelance DX Consultant &amp; Product Manager</p>
+    <p class="hero-eyebrow">Freelance Product Manager</p>
     <div class="hero-photo">
       <img src="photo.webp" alt="足立 優">
     </div>
     <h1 class="hero-name">足立 優</h1>
     <p class="hero-name-en">Yuu Adachi</p>
-    <p class="hero-desc">「徹底した顧客視点 × デジタル実装 × 組織変革」で企業の事業価値を最大化する、実効型DXコンサルタント。戦略策定からプロダクト開発・組織変革まで一気通貫で実行します。</p>
+    <p class="hero-title-jp">フリーランス プロダクトマネージャー / サービスオーナー</p>
+    <p class="hero-desc">現場で得た顧客視点を起点に、toCプロダクトの企画から開発、組織づくりまでを伴走するプロダクトマネージャー。「つくって終わり」ではなく、ユーザーの行動が変わり、事業が前に進むところまでをゴールに置いています。</p>
   </div>
 </section>
 
@@ -596,30 +621,12 @@
     <h2 class="section-title">私について</h2>
     <div class="section-line"></div>
   </div>
-  <div class="about-grid fade-in">
+  <div class="about-grid fade-in" style="grid-template-columns: 1fr; max-width: 720px;">
     <div class="about-text">
-      <p>飲食・小売業界での<strong>現場マネジメント経験</strong>を原体験に、テクノロジーで事業を変革するキャリアを歩んできました。カラオケチェーン運営会社では部長代理として、業界初の「受付レス予約システム」や自社専用デバイスのスクラッチ開発を主導。年間約<strong>20億円のコスト削減</strong>と過去最高益達成に貢献しました。</p>
-      <p>大手ドラッグストアチェーンでは<strong>1,500万DL規模のアプリ</strong>のサービスオーナーとして、大手コンサルティングファームやデザインファームをマネジメントしながら、アジャイル組織への変革と生成AIのプロダクト開発プロセスへの実装を完遂。</p>
-      <p>2026年3月に独立し、現在は大手ドラッグストアチェーンのDXコンサルタント兼サービスオーナーとして、スマホレジやヘルスケアデータ活用等の最上流工程を牽引しています。<strong>戦略策定からシステム実装、組織変革までを一気通貫で実行できる</strong>「実効型コンサルタント」です。</p>
-    </div>
-    <div>
-      <div class="skills-title">得意領域</div>
-      <div class="skills-list">
-        <div class="skill-tag">プロダクトマネジメント</div>
-        <div class="skill-tag">スマホアプリ企画・開発（PdM / PO）</div>
-        <div class="skill-tag">DX戦略・推進</div>
-        <div class="skill-tag">パートナーマネジメント</div>
-        <div class="skill-tag">OMO・店舗DX</div>
-        <div class="skill-tag">生成AIの組織浸透</div>
-        <div class="skill-tag">アジャイル開発</div>
-        <div class="skill-tag">UXリサーチ・インタビュー</div>
-        <div class="skill-tag">ペルソナ設計</div>
-      </div>
-      <div class="skills-title" style="margin-top: 2rem;">ツール</div>
-      <div class="skills-list">
-        <div class="skill-tag">JIRA / Confluence / Miro</div>
-        <div class="skill-tag">Claude / ChatGPT / Gemini</div>
-      </div>
+      <p>キャリアは飲食業の現場からスタートしました。<strong>お客様の体験を間近で見てきた経験</strong>が、いまのプロダクトづくりの原点になっています。</p>
+      <p>その後、カラオケチェーン「ジャンカラ」を運営する<strong>株式会社TOAI</strong>のデジタル戦略部門でプロダクトマネージャーへ。予約という習慣がなかった業界に、アプリで新しい行動を根づかせる挑戦をはじめ、店舗オペレーションのデジタル化や複数の新規事業の立ち上げにも携わりました。事業会社の責任者として、つくる側と使う側の両方の視点を養ってきました。</p>
+      <p>その後、<strong>株式会社スギ薬局</strong>へ。多くの人に使われている<strong>スギ薬局アプリ</strong>を担当し、社外の専門パートナーと社内チームをつなぎながら、新機能の企画から体験設計、開発までを推進。組織をより速く・柔軟に動ける形へと変える取り組みもリードしてきました。</p>
+      <p>現在はフリーランスとして、引き続きスギ薬局のプロダクトに伴走しています。<strong>構想から実装、チームづくりまでを一気通貫で支援</strong>し、ユーザーの声に丁寧に耳を傾けながら、事業の成果につながるプロダクトを形にすることを大切にしています。</p>
     </div>
   </div>
 </section>
@@ -631,85 +638,127 @@
     <div class="section-line"></div>
   </div>
   <div class="exp-list">
+
     <div class="exp-item fade-in">
       <div class="exp-period">2026.03 — Present<div class="exp-current">現職</div></div>
       <div>
-        <div class="exp-company">フリーランス（独立コンサルタント）</div>
-        <div class="exp-role">DXコンサルタント / サービスオーナー</div>
-        <div class="exp-desc">大手ドラッグストアチェーンとのコンサルティング契約のもと、アプリ・販促管理システムのサービスオーナーとして事業戦略に紐づくプロダクトロードマップを策定。OMO推進およびヘルスケア領域における複数の新機能企画・実装を支援。プロダクト開発プロセスへの生成AI利活用支援も担当。</div>
+        <div class="exp-company">フリーランス（サービスオーナー）</div>
+        <div class="exp-role">サービスオーナー</div>
+        <div class="exp-desc">株式会社スギ薬局と業務委託契約を結び、2つのプロダクトのオーナーを務めています。<br><br>
+        <strong>スギ薬局アプリ</strong>では、社外のデザインパートナーやスクラム支援メンバーと社内の制作・開発チームをつなぎ、企画からデザイン、開発までを一体で推進。プロトタイプを素早く形にして、ユーザーインタビューで仮説を確かめながら進めるスタイルを大切にしています。<br><br>
+        <strong>販促業務を支えるシステム</strong>では、メーカー・流通・社内の担当者など立場の異なる多くの人が使う仕組みをゼロから設計・開発。複雑な業務を整理し、誰もが迷わず使える形に落とし込んでいます。あわせて、次世代のプロダクトマネージャーの育成も担っています。</div>
         <div class="exp-tags">
-          <span class="exp-tag">DXコンサルティング</span>
-          <span class="exp-tag">プロダクトロードマップ</span>
-          <span class="exp-tag">生成AI活用</span>
-          <span class="exp-tag">スマホレジ</span>
+          <span class="exp-tag">プロダクトオーナー</span>
+          <span class="exp-tag">toCアプリ</span>
+          <span class="exp-tag">ゼロイチ開発</span>
+          <span class="exp-tag">スクラム / 内製開発</span>
+          <span class="exp-tag">ユーザーインタビュー</span>
+          <span class="exp-tag">人材育成</span>
         </div>
       </div>
     </div>
+
     <div class="exp-item fade-in">
       <div class="exp-period">2024.09 — 2026.02</div>
       <div>
-        <div class="exp-company">大手ドラッグストアチェーン（DX戦略本部）</div>
-        <div class="exp-role">サービスオーナー / PdM / AI活用推進リード</div>
-        <div class="exp-desc">大手コンサルティングファーム（PMO）・デザインファーム（UXデザイン）をアサインし、事業会社側責任者として高度なパートナーマネジメントを実行。1,500万DL規模のアプリの新機能開発を主導。AIエージェントによる企画壁打ち・AI仮想ペルソナによるプロトタイプ検証スキームを構築し全社標準ナレッジとして展開。完全内製チームをサービス型チームへ移行させウォーターフォールからアジャイルへの組織変革を実現。</div>
+        <div class="exp-company">株式会社スギ薬局（DX戦略本部）</div>
+        <div class="exp-role">サービスオーナー / PdM</div>
+        <div class="exp-desc">多くの人に使われている<strong>スギ薬局アプリ</strong>のサービスオーナーとして、新機能の企画から体験設計、開発までを一貫して担当しました。社外の専門パートナーと社内チームの橋渡し役となり、それぞれの強みを引き出しながらプロジェクトを前へ。<br><br>あわせて、生成AIを活用してユーザー視点での検証を素早く回す仕組みを整え、チーム全体に広めました。組織をより速く柔軟に動ける形へと変える取り組みもリードしています。</div>
         <div class="exp-tags">
-          <span class="exp-tag">1,500万DLアプリ</span>
-          <span class="exp-tag">アジャイル変革</span>
+          <span class="exp-tag">toCアプリ</span>
+          <span class="exp-tag">新機能企画・体験設計</span>
           <span class="exp-tag">パートナーマネジメント</span>
-          <span class="exp-tag">AI仮想ペルソナ</span>
+          <span class="exp-tag">生成AI活用</span>
+          <span class="exp-tag">組織変革</span>
         </div>
       </div>
     </div>
+
     <div class="exp-item fade-in">
       <div class="exp-period">2012.06 — 2024.08</div>
       <div>
-        <div class="exp-company">カラオケチェーン運営会社</div>
-        <div class="exp-role">新規事業戦略部 部長代理 / PdM / グループ会社代表取締役</div>
-        <div class="exp-desc">店長・エリアマネージャーを経てデジタル戦略部へ異動。業界初の「受付レス予約システム」をスクラッチ開発し予約比率を5%→55%へ向上。全180店舗へのセルフ受付精算機・注文タブレット導入により年間約20億円の人件費削減を実現。大手音楽配信事業者とのAPI連携による業界初のアプリ楽曲予約機能も実現。グループ会社代表として6つの新規事業（飲食・フィットネス等）のP/L管理も担当。</div>
+        <div class="exp-company">株式会社TOAI（カラオケ「ジャンカラ」運営）</div>
+        <div class="exp-role">PdM / デジタル戦略マネージャー / 新規事業責任者</div>
+        <div class="exp-desc">店舗スタッフから店長、エリアマネージャーを経て、デジタル戦略部門でプロダクトマネージャーへ。複数のtoCプロダクトを手がけました。<br><br>
+        <strong>ジャンカラアプリ「すぐカラ」</strong>では、予約という習慣が根づいていなかった業界に、新しい行動を定着させることに成功。多くのユーザーが事前予約をあたり前に使うようになりました。業界で初めての、アプリから楽曲を予約できる仕組みも実現しています。<br><br>
+        <strong>店舗のデジタル化</strong>では、受付や会計を自動化する仕組みを開発し、スタッフの負担を大きく軽減。空いたスペースを新たな価値に変える取り組みも行いました。<br><br>
+        <strong>新規事業</strong>では、飲食・フィットネスなど複数の事業の立ち上げを担当し、うち2社では代表として経営にも携わりました。</div>
         <div class="exp-tags">
-          <span class="exp-tag">スクラッチ開発</span>
-          <span class="exp-tag">年間20億円削減</span>
-          <span class="exp-tag">180店舗展開</span>
-          <span class="exp-tag">API連携</span>
-          <span class="exp-tag">新規事業</span>
+          <span class="exp-tag">toCアプリ ゼロイチ開発</span>
+          <span class="exp-tag">行動変容</span>
+          <span class="exp-tag">店舗DX</span>
+          <span class="exp-tag">新規事業立ち上げ</span>
+          <span class="exp-tag">経営</span>
         </div>
       </div>
     </div>
+
+    <div class="exp-item fade-in">
+      <div class="exp-period">2009.04 — 2012.05</div>
+      <div>
+        <div class="exp-company">飲食業（イタリアンレストラン）</div>
+        <div class="exp-role">サービススタッフ</div>
+        <div class="exp-desc">調理師専門学校を卒業後、レストランの現場でキャリアをスタート。お客様と直接向き合い、体験をつくる仕事に携わりました。このときに培った<strong>顧客視点</strong>が、その後のプロダクトづくりすべての土台になっています。</div>
+        <div class="exp-tags">
+          <span class="exp-tag">現場経験</span>
+          <span class="exp-tag">顧客視点</span>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<!-- WORKS --><!-- WORKS -->
-<section id="works">
+<!-- SKILLS -->
+<section id="skills" style="background: var(--warm-white);">
   <div class="section-header fade-in">
-    <span class="section-eyebrow">05 — Works</span>
-    <h2 class="section-title">制作物</h2>
+    <span class="section-eyebrow">03 — Expertise</span>
+    <h2 class="section-title">得意領域</h2>
     <div class="section-line"></div>
   </div>
-  <div class="works-grid fade-in">
-    <a href="persona-generator.html" class="work-card">
-      <div class="work-badge live">Live</div>
-      <div class="work-name">AI Persona Generator</div>
-      <div class="work-desc">プロダクト情報を入力するとAIが仮想ユーザーペルソナを生成し、ペルソナ視点でフィードバックを提供するツール。Claude API使用。</div>
-      <div class="work-arrow">View Tool →</div>
-    </a>
-    <a href="https://portfolio-bay-eight-86.vercel.app/" target="_blank" class="work-card">
-      <div class="work-badge live">Live</div>
-      <div class="work-name">ポートフォリオサイト</div>
-      <div class="work-desc">本サイト。バイブコーディングで制作・公開したポートフォリオ。HTML / CSS / Vercel。</div>
-      <div class="work-arrow">View Site →</div>
-    </a>
-    <div class="work-card coming-soon">
-      <div class="work-badge wip">Coming Soon</div>
-      <div class="work-name">制作中</div>
-      <div class="work-desc">次のプロダクトを準備中です。</div>
+  <div class="fade-in">
+    <div class="skills-grid">
+      <div class="skill-card">プロダクトマネジメント</div>
+      <div class="skill-card">toCアプリの企画・改善</div>
+      <div class="skill-card">新機能の企画・体験設計</div>
+      <div class="skill-card">UXリサーチ・ユーザーインタビュー</div>
+      <div class="skill-card">仮説検証・競合分析</div>
+      <div class="skill-card">アジャイル / スクラム開発</div>
+      <div class="skill-card">パートナー・チームマネジメント</div>
     </div>
   </div>
 </section>
 
-<!-- BLOG -->
+<!-- MEDIA -->
+<section id="media">
+  <div class="section-header fade-in">
+    <span class="section-eyebrow">04 — Media</span>
+    <h2 class="section-title">メディア掲載</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="media-grid fade-in">
+    <a href="https://dx.sugi-recruit.jp/project-story/article/service-team" target="_blank" class="media-card">
+      <div class="media-source">スギ薬局公式ブログ</div>
+      <div class="media-title">分業体制からの脱却。サービス型チームへの変革ストーリー</div>
+      <div class="media-arrow">Read →</div>
+    </a>
+    <a href="https://sakumaga.sakura.ad.jp/entry/toai/" target="_blank" class="media-card">
+      <div class="media-source">さくマガ（さくらインターネット）</div>
+      <div class="media-title">ジャンカラアプリが目指す新しい顧客体験と受付無人化の裏側</div>
+      <div class="media-arrow">Read →</div>
+    </a>
+    <a href="https://design-partnership.goodpatch.com/lp_product_growth_diagnose" target="_blank" class="media-card">
+      <div class="media-source">グッドパッチ / Client Interview</div>
+      <div class="media-title">感情論なしに自分の課題感が正しいと確認でき、社内を動かす根拠にもなりました</div>
+      <div class="media-arrow">Read →</div>
+    </a>
+  </div>
+</section>
+
 <section id="blog">
   <div class="section-header fade-in">
-    <span class="section-eyebrow">06 — Blog</span>
-    <h2 class="section-title">ブログ・発信</h2>
+    <span class="section-eyebrow">05 — Blog</span>
+    <h2 class="section-title">ブログ</h2>
     <div class="section-line"></div>
   </div>
   <div class="fade-in">
@@ -852,35 +901,30 @@
   </div>
 </section>
 
-<section id="media">
-  <div class="section-header fade-in">
-    <span class="section-eyebrow">07 — Media</span>
-    <h2 class="section-title">メディア掲載</h2>
-    <div class="section-line"></div>
-  </div>
-  <div class="media-grid fade-in">
-    <a href="https://dx.sugi-recruit.jp/project-story/article/service-team" target="_blank" class="media-card">
-      <div class="media-source">スギ薬局公式ブログ</div>
-      <div class="media-title">分業体制からの脱却。サービス型チームへの変革ストーリー</div>
-      <div class="media-arrow">Read →</div>
-    </a>
-    <a href="https://sakumaga.sakura.ad.jp/entry/toai/" target="_blank" class="media-card">
-      <div class="media-source">さくマガ（さくらインターネット）</div>
-      <div class="media-title">ジャンカラアプリが目指す新しい顧客体験と受付無人化の裏側</div>
-      <div class="media-arrow">Read →</div>
-    </a>
-    <a href="https://design-partnership.goodpatch.com/lp_product_growth_diagnose" target="_blank" class="media-card">
-      <div class="media-source">グッドパッチ / Client Interview</div>
-      <div class="media-title">感情論なしに自分の課題感が正しいと確認でき、社内を動かす根拠にもなりました</div>
-      <div class="media-arrow">Read →</div>
-    </a>
+
+<section id="contact">
+  <div class="contact-inner fade-in">
+    <div class="contact-tag">Contact</div>
+    <h2 class="contact-title">お仕事の<br>ご相談はこちら</h2>
+    <p class="contact-sub">toCプロダクトの企画・改善、新機能の立ち上げ、チームづくりなど、<br>プロダクトに関わるご相談を承っています。お気軽にご連絡ください。</p>
+    <a href="mailto:yuu.adachi.uun@gmail.com" class="btn-primary">メールで問い合わせる →</a>
+    <div class="contact-social">
+      <a href="https://www.linkedin.com/in/%E5%84%AA-%E8%B6%B3%E7%AB%8B-1187ba326/" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+      <a href="https://x.com/yuuadachiuun" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        X / Twitter
+      </a>
+    </div>
   </div>
 </section>
 
 <!-- HOBBY -->
 <section id="hobby">
   <div class="section-header fade-in">
-    <span class="section-eyebrow">08 — Hobby</span>
+    <span class="section-eyebrow">06 — Hobby</span>
     <h2 class="section-title">趣味</h2>
     <div class="section-line"></div>
   </div>
@@ -898,25 +942,6 @@
         <div class="hobby-label">eスポーツ / Apex Legends</div>
         <p class="hobby-text">FPSゲーム「Apex Legends」を楽しんでいます。2026年1月には札幌で開催された世界大会 ALGS Year 5 Championship に現地参加。オンラインゲームを競技化しオフラインで世界大会を開催するという座組を、プロダクトとUXの視点で体験・観察しました。</p>
       </div>
-    </div>
-  </div>
-</section>
-
-<section id="contact">
-  <div class="contact-inner fade-in">
-    <div class="contact-tag">Contact</div>
-    <h2 class="contact-title">お仕事の<br>ご相談はこちら</h2>
-    <p class="contact-sub">DX戦略の立案、プロダクトマネジメント、生成AIの組織実装など、<br>お気軽にご相談ください。</p>
-    <a href="mailto:yuu.adachi.uun@gmail.com" class="btn-primary">メールで問い合わせる →</a>
-    <div class="contact-social">
-      <a href="https://www.linkedin.com/in/%E5%84%AA-%E8%B6%B3%E7%AB%8B-1187ba326/" target="_blank">
-        <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-        LinkedIn
-      </a>
-      <a href="https://x.com/yuuadachiuun" target="_blank">
-        <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-        X / Twitter
-      </a>
     </div>
   </div>
 </section>

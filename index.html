@@ -57,6 +57,14 @@
   .nav-social a { color: var(--muted); text-decoration: none; transition: color 0.2s; display: flex; align-items: center; }
   .nav-social a:hover { color: var(--sage-dark); }
   .nav-social svg { width: 16px; height: 16px; fill: currentColor; }
+  .nav-note { display: inline-flex; align-items: center; }
+  .nav-note img {
+    width: 20px; height: 20px;
+    border-radius: 4px;
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    padding: 1px;
+  }
   #hero {
     min-height: 90vh;
     display: flex;
@@ -269,6 +277,13 @@
   .contact-social a { display: inline-flex; align-items: center; gap: 0.5rem; font-family: 'Josefin Sans', sans-serif; font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
   .contact-social a:hover { color: var(--sage-dark); }
   .contact-social svg { width: 14px; height: 14px; fill: currentColor; }
+  .note-square {
+    width: 18px; height: 18px;
+    border-radius: 4px;
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    padding: 1px;
+  }
   /* ── HOBBY ── */
   #hobby { background: var(--cream); overflow: hidden; }
   .slider-wrapper { position: relative; }
@@ -445,6 +460,14 @@
 
   footer { background: var(--dark-bg); color: rgba(255,255,255,0.3); padding: 2rem 3rem; }
   footer .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+  footer .footer-links { display: flex; gap: 1.5rem; }
+  footer .footer-links a {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.65rem; letter-spacing: 0.15em;
+    text-transform: uppercase; color: rgba(255,255,255,0.5);
+    text-decoration: none; transition: color 0.2s;
+  }
+  footer .footer-links a:hover { color: var(--sage-light); }
   footer p { font-family: 'Josefin Sans', sans-serif; font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; }
   .hamburger { display: none; }
   .mobile-menu { display: none; }
@@ -578,6 +601,9 @@
       </a>
       <a href="https://x.com/yuuadachiuun" target="_blank" aria-label="X">
         <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a href="https://note.com/yuu_adachi_uun" target="_blank" aria-label="note" class="nav-note">
+        <img src="note-logo.svg" alt="note">
       </a>
     </div>
     <button class="hamburger" onclick="toggleMenu()" aria-label="メニュー">
@@ -944,7 +970,11 @@
       </a>
       <a href="https://x.com/yuuadachiuun" target="_blank">
         <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-        X / Twitter
+        X
+      </a>
+      <a href="https://note.com/yuu_adachi_uun" target="_blank" class="contact-note-link">
+        <img src="note-logo.svg" alt="note" class="note-square">
+        note
       </a>
     </div>
   </div>
@@ -954,6 +984,11 @@
 <footer>
   <div class="footer-inner">
     <p>© 2026 足立 優 — Product Manager</p>
+    <div class="footer-links">
+      <a href="https://note.com/yuu_adachi_uun" target="_blank">note</a>
+      <a href="https://www.linkedin.com/in/%E5%84%AA-%E8%B6%B3%E7%AB%8B-1187ba326/" target="_blank">LinkedIn</a>
+      <a href="https://x.com/yuuadachiuun" target="_blank">X</a>
+    </div>
     <p>Tokyo, Japan</p>
   </div>
 </footer>

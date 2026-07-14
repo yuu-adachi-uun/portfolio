@@ -334,6 +334,39 @@
   }
   .skill-card:hover { border-color: var(--sage-light); }
 
+  /* ── WORKS ── */
+  #works { background: var(--cream); }
+  .works-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; max-width: 560px; }
+  .work-card {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    padding: 2rem;
+    text-decoration: none;
+    display: block;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .work-card:hover { border-color: var(--sage-light); transform: translateY(-4px); }
+  .work-badge {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.6rem; letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.6rem; margin-bottom: 1.2rem;
+    display: inline-block;
+    background: rgba(122,158,142,0.15); color: var(--sage-dark);
+    border: 1px solid var(--sage-light);
+  }
+  .work-name {
+    font-family: 'Shippori Mincho', serif;
+    font-weight: 600; font-size: 1.15rem;
+    color: var(--ink); margin-bottom: 0.5rem;
+  }
+  .work-desc { font-size: 0.9rem; line-height: 1.9; color: var(--muted); margin-bottom: 1.2rem; }
+  .work-arrow {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.65rem; letter-spacing: 0.15em;
+    color: var(--sage-dark); text-transform: uppercase;
+  }
+
   /* ── HOBBY (slim) ── */
   .hobby-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
   .hobby-text-item { padding: 2rem; border: 1px solid var(--border); background: var(--warm-white); }
@@ -344,42 +377,6 @@
     margin-bottom: 1rem;
   }
   .hobby-text { font-size: 0.92rem; line-height: 2; color: #4a4540; }
-
-  /* ── WORKS ── */
-  #works { background: var(--cream); }
-  .works-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-  .work-card {
-    background: var(--warm-white);
-    border: 1px solid var(--border);
-    padding: 2rem;
-    text-decoration: none;
-    display: block;
-    transition: border-color 0.2s, transform 0.2s;
-    position: relative;
-  }
-  .work-card:hover { border-color: var(--sage-light); transform: translateY(-4px); }
-  .work-card.coming-soon { opacity: 0.5; cursor: default; }
-  .work-badge {
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 0.6rem; letter-spacing: 0.2em;
-    text-transform: uppercase;
-    padding: 0.25rem 0.6rem;
-    margin-bottom: 1.2rem;
-    display: inline-block;
-  }
-  .work-badge.live { background: rgba(122,158,142,0.15); color: var(--sage-dark); border: 1px solid var(--sage-light); }
-  .work-badge.wip { background: rgba(181,147,90,0.12); color: var(--gold); border: 1px solid rgba(181,147,90,0.3); }
-  .work-name {
-    font-family: 'Shippori Mincho', serif;
-    font-weight: 600; font-size: 1.1rem;
-    color: var(--ink); margin-bottom: 0.5rem;
-  }
-  .work-desc { font-size: 0.88rem; line-height: 1.8; color: var(--muted); margin-bottom: 1.2rem; }
-  .work-arrow {
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 0.65rem; letter-spacing: 0.15em;
-    color: var(--sage-dark); text-transform: uppercase;
-  }
 
   /* ── BLOG ── */
   #blog { background: var(--warm-white); }
@@ -575,6 +572,7 @@
       <li><a href="#about">About</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#skills">Expertise</a></li>
+      <li><a href="#works">Works</a></li>
       <li><a href="#media">Media</a></li>
       <li><a href="#blog">Blog</a></li>
       <li><a href="#hobby">Hobby</a></li>
@@ -603,6 +601,7 @@
   <a href="#about" onclick="toggleMenu()">About</a>
   <a href="#experience" onclick="toggleMenu()">Experience</a>
   <a href="#skills" onclick="toggleMenu()">Expertise</a>
+  <a href="#works" onclick="toggleMenu()">Works</a>
   <a href="#media" onclick="toggleMenu()">Media</a>
   <a href="#blog" onclick="toggleMenu()">Blog</a>
   <a href="#hobby" onclick="toggleMenu()">Hobby</a>
@@ -744,10 +743,27 @@
   </div>
 </section>
 
+<!-- WORKS -->
+<section id="works">
+  <div class="section-header fade-in">
+    <span class="section-eyebrow">04 — Works</span>
+    <h2 class="section-title">制作物</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="works-grid fade-in">
+    <a href="https://algs-guide.vercel.app/" target="_blank" class="work-card">
+      <div class="work-badge">Live</div>
+      <div class="work-name">ALGS観戦ガイド</div>
+      <div class="work-desc">Apex未経験の人でもeスポーツ世界大会を楽しめるように制作した観戦入門ガイド。ルール・キャラ・戦術・注目チームまでを、初心者目線の情報設計とUXライティングでまとめた個人プロジェクト。</div>
+      <div class="work-arrow">View Site →</div>
+    </a>
+  </div>
+</section>
+
 <!-- MEDIA -->
 <section id="media">
   <div class="section-header fade-in">
-    <span class="section-eyebrow">04 — Media</span>
+    <span class="section-eyebrow">05 — Media</span>
     <h2 class="section-title">メディア掲載</h2>
     <div class="section-line"></div>
   </div>
@@ -772,7 +788,7 @@
 
 <section id="blog">
   <div class="section-header fade-in">
-    <span class="section-eyebrow">05 — Blog</span>
+    <span class="section-eyebrow">06 — Blog</span>
     <h2 class="section-title">ブログ</h2>
     <div class="section-line"></div>
   </div>
@@ -920,7 +936,7 @@
 <!-- HOBBY -->
 <section id="hobby">
   <div class="section-header fade-in">
-    <span class="section-eyebrow">06 — Hobby</span>
+    <span class="section-eyebrow">07 — Hobby</span>
     <h2 class="section-title">趣味</h2>
     <div class="section-line"></div>
   </div>

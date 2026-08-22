@@ -337,6 +337,7 @@
   /* ── PRODUCTS ── */
   #products { background: var(--cream); }
   .products-note { font-size: 0.88rem; line-height: 1.9; color: var(--muted); margin-bottom: 2rem; }
+  .products-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
   .product-card .work-tags { margin-bottom: 1.2rem; }
 
   /* ── WORKS ── */
@@ -539,6 +540,7 @@
     .hobby-grid { grid-template-columns: 1fr; }
     .skills-grid { grid-template-columns: 1fr; }
     .works-grid { grid-template-columns: 1fr; gap: 1rem; }
+    .products-grid { grid-template-columns: 1fr; gap: 1rem; }
     .slider-item { flex: 0 0 85%; }
 
     /* BLOG */
@@ -761,7 +763,7 @@
     <div class="section-line"></div>
   </div>
   <p class="products-note fade-in">PdM・サービスオーナーとして、企画・体験設計・開発推進を担当したプロダクトです。デザインおよび実装はチームとパートナーによるものです。ストアに表示される内容は最新版のため、担当当時とは異なる場合があります。</p>
-  <div class="works-grid fade-in">
+  <div class="products-grid fade-in">
     <a href="https://apps.apple.com/jp/app/id853001943" target="_blank" rel="noopener" class="work-card product-card">
       <div class="work-badge">App Store</div>
       <div class="work-name">スギ薬局アプリ</div>

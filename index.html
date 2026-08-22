@@ -360,7 +360,10 @@
     font-weight: 600; font-size: 1.15rem;
     color: var(--ink); margin-bottom: 0.5rem;
   }
+  .work-card-static { cursor: default; }
+  .work-card-static:hover { border-color: var(--border); transform: none; }
   .work-desc { font-size: 0.9rem; line-height: 1.9; color: var(--muted); margin-bottom: 1.2rem; }
+  .work-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
   .work-arrow {
     font-family: 'Josefin Sans', sans-serif;
     font-size: 0.65rem; letter-spacing: 0.15em;
@@ -757,6 +760,17 @@
       <div class="work-desc">Apex未経験の人でもeスポーツ世界大会を楽しめるように制作した観戦入門ガイド。ルール・キャラ・戦術・注目チームまでを、初心者目線の情報設計とUXライティングでまとめた個人プロジェクト。</div>
       <div class="work-arrow">View Site →</div>
     </a>
+    <div class="work-card work-card-static">
+      <div class="work-badge">This Site</div>
+      <div class="work-name">本ポートフォリオサイト</div>
+      <div class="work-desc">いま見ていただいているこのサイト自体も、企画・情報設計・ライティングからデザイン・実装まで自分で手がけた制作物です。コーディングはClaude Code（AIコーディングエージェント）と対話しながら進め、HTML／CSSの単一ファイルで構築。AIを使って「つくりたいものを自分の手で形にする」実践の記録でもあります。</div>
+      <div class="work-tags">
+        <span class="exp-tag">情報設計</span>
+        <span class="exp-tag">UXライティング</span>
+        <span class="exp-tag">HTML / CSS</span>
+        <span class="exp-tag">Claude Code</span>
+      </div>
+    </div>
   </div>
 </section>
 

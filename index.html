@@ -336,7 +336,7 @@
 
   /* ── WORKS ── */
   #works { background: var(--cream); }
-  .works-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+  .works-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
   .work-card {
     background: var(--warm-white);
     border: 1px solid var(--border);
@@ -754,12 +754,6 @@
     <div class="section-line"></div>
   </div>
   <div class="works-grid fade-in">
-    <a href="https://algs-guide.vercel.app/" target="_blank" class="work-card">
-      <div class="work-badge">Live</div>
-      <div class="work-name">ALGS観戦ガイド</div>
-      <div class="work-desc">Apex未経験の人でもeスポーツ世界大会を楽しめるように制作した観戦入門ガイド。ルール・キャラ・戦術・注目チームまでを、初心者目線の情報設計とUXライティングでまとめた個人プロジェクト。</div>
-      <div class="work-arrow">View Site →</div>
-    </a>
     <div class="work-card work-card-static">
       <div class="work-badge">This Site</div>
       <div class="work-name">本ポートフォリオサイト</div>
